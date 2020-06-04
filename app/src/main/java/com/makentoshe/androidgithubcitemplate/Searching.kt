@@ -15,6 +15,7 @@ class Searching : AppCompatActivity() {
         thread {
             Thread.sleep(3000)
             var myIntent = Intent(this, Game::class.java)
+            finish()
             startActivity(myIntent)
         }
     }
