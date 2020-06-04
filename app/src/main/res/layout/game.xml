@@ -80,20 +80,22 @@
         app:layout_constraintHeight_percent="@dimen/bottom_height">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Вы - мафия" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="xxx -> yyy" />
-
-        <TextView
             android:id="@+id/text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="A TextView" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn"
+            android:text="Click" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/chat"
+            android:scrollbars="vertical"
+            />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

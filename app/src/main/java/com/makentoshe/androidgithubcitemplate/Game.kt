@@ -3,6 +3,7 @@ package com.makentoshe.androidgithubcitemplate
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
@@ -17,7 +18,14 @@ class Game : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.game)
         Log.d("game", "Game is here")
-
+        var cnt = 0
+        var sc = ScrollingMovementMethod()
+        chat.movementMethod = sc
+        btn.setOnClickListener{
+            val message = chat.text.toString() + "Tuturu!" + cnt.toString() + "\n"
+            chat.text = message
+            cnt += 1
+        }
         val popupMenu = PopupMenu(this, button1)
         popupMenu.inflate(R.menu.popupmenu)
 
