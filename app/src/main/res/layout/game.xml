@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,152 +8,175 @@
     android:orientation="horizontal"
     tools:context=".MainActivity">
 
-    <TableRow>
+    <TextView
+        android:id="@+id/history_head"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="История"
+        android:textSize="20dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlSymmetry"
+        app:layout_constraintWidth_percent="@dimen/left_width"
+        app:layout_constraintHeight_percent="@dimen/top_height" />
+
+    <View
+        android:layout_height="match_parent"
+        android:layout_width="1dp"
+        android:background="@android:color/black"
+        app:layout_constraintStart_toEndOf="@+id/history_head" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:orientation="horizontal"
+        app:layout_constraintHeight_percent="@dimen/top_height"
+        app:layout_constraintStart_toEndOf="@+id/history_head"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="@dimen/right_width"
+        tools:context=".MainActivity">
+
         <TextView
-            android:layout_weight="0.2"
-            android:text="История"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:text="icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:gravity="center"
+            android:text="Состояние" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:text="03:00" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:context=".MainActivity"
+        app:layout_constraintWidth_percent="@dimen/left_width"
+        app:layout_constraintHeight_percent="@dimen/bottom_height">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Вы - мафия" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="xxx -> yyy" />
+
+        <TextView
+            android:id="@+id/text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:paddingStart="10dp"
-            tools:ignore="RtlSymmetry" />
+            android:text="A TextView" />
+    </LinearLayout>
 
-        <LinearLayout
-            android:layout_weight="0.7"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            tools:context=".MainActivity" >
-
-            <TextView
-                android:layout_weight="0.1"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="icon"/>
-
-            <TextView
-                android:layout_weight="0.8"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Состояние"/>
-
-            <TextView
-                android:layout_weight="0.1"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="03:00"/>
-        </LinearLayout>
-    </TableRow>
-
-    <View android:layout_width="match_parent"
-        android:background="@android:color/black"
-        android:layout_height="1dp" />
-
-    <TableRow android:layout_weight="1">
-        <LinearLayout
-            android:layout_weight="0.2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            tools:context=".MainActivity" >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Вы - мафия" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="xxx -> yyy"/>
-
-            <TextView
-                android:id="@+id/text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="A TextView" />
-        </LinearLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.7"
-            android:orientation="horizontal"
-            tools:context=".MainActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:context=".MainActivity"
+        app:layout_constraintWidth_percent="@dimen/right_width"
+        app:layout_constraintHeight_percent="@dimen/bottom_height">>
 
 
-            <View
-                android:id="@+id/table"
-                android:layout_width="@dimen/table_radius"
-                android:layout_height="@dimen/table_radius"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.501"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:background="@drawable/circle_table" />
+        <View
+            android:id="@+id/table"
+            android:layout_width="@dimen/table_radius"
+            android:layout_height="@dimen/table_radius"
+            android:background="@drawable/circle_table"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/button1"
-                android:layout_width="@dimen/btn_size"
-                android:layout_height="@dimen/btn_size"
-                app:layout_constraintCircle="@id/table"
-                app:layout_constraintCircleRadius="@dimen/radius"
-                tools:ignore="MissingConstraints"
-                android:background="@drawable/circle_button"/>
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="@dimen/btn_size"
+            android:layout_height="@dimen/btn_size"
+            android:background="@drawable/circle_button"
+            app:layout_constraintCircle="@id/table"
+            app:layout_constraintCircleRadius="@dimen/radius"
+            tools:ignore="MissingConstraints" />
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="@dimen/btn_size"
-                android:layout_height="@dimen/btn_size"
-                app:layout_constraintCircle="@id/table"
-                app:layout_constraintCircleRadius="@dimen/radius"
-                app:layout_constraintCircleAngle="60"
-                tools:ignore="MissingConstraints"
-                android:background="@drawable/circle_button" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="@dimen/btn_size"
+            android:layout_height="@dimen/btn_size"
+            android:background="@drawable/circle_button"
+            app:layout_constraintCircle="@id/table"
+            app:layout_constraintCircleAngle="60"
+            app:layout_constraintCircleRadius="@dimen/radius"
+            tools:ignore="MissingConstraints" />
 
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="@dimen/btn_size"
-                android:layout_height="@dimen/btn_size"
-                app:layout_constraintCircle="@id/table"
-                app:layout_constraintCircleRadius="@dimen/radius"
-                app:layout_constraintCircleAngle="120"
-                tools:ignore="MissingConstraints"
-                android:background="@drawable/circle_button" />
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="@dimen/btn_size"
+            android:layout_height="@dimen/btn_size"
+            android:background="@drawable/circle_button"
+            app:layout_constraintCircle="@id/table"
+            app:layout_constraintCircleAngle="120"
+            app:layout_constraintCircleRadius="@dimen/radius"
+            tools:ignore="MissingConstraints" />
 
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="@dimen/btn_size"
-                android:layout_height="@dimen/btn_size"
-                app:layout_constraintCircle="@id/table"
-                app:layout_constraintCircleRadius="@dimen/radius"
-                app:layout_constraintCircleAngle="180"
-                tools:ignore="MissingConstraints"
-                android:background="@drawable/circle_button" />
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="@dimen/btn_size"
+            android:layout_height="@dimen/btn_size"
+            android:background="@drawable/circle_button"
+            app:layout_constraintCircle="@id/table"
+            app:layout_constraintCircleAngle="180"
+            app:layout_constraintCircleRadius="@dimen/radius"
+            tools:ignore="MissingConstraints" />
 
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="@dimen/btn_size"
-                android:layout_height="@dimen/btn_size"
-                app:layout_constraintCircle="@id/table"
-                app:layout_constraintCircleRadius="@dimen/radius"
-                app:layout_constraintCircleAngle="240"
-                tools:ignore="MissingConstraints"
-                android:background="@drawable/circle_button" />
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="@dimen/btn_size"
+            android:layout_height="@dimen/btn_size"
+            android:background="@drawable/circle_button"
+            app:layout_constraintCircle="@id/table"
+            app:layout_constraintCircleAngle="240"
+            app:layout_constraintCircleRadius="@dimen/radius"
+            tools:ignore="MissingConstraints" />
 
-            <Button
-                android:id="@+id/button6"
-                android:layout_width="@dimen/btn_size"
-                android:layout_height="@dimen/btn_size"
-                app:layout_constraintCircle="@id/table"
-                app:layout_constraintCircleRadius="@dimen/radius"
-                app:layout_constraintCircleAngle="300"
-                tools:ignore="MissingConstraints"
-                android:background="@drawable/circle_button" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </TableRow>
-</TableLayout>
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="@dimen/btn_size"
+            android:layout_height="@dimen/btn_size"
+            android:background="@drawable/circle_button"
+            app:layout_constraintCircle="@id/table"
+            app:layout_constraintCircleAngle="300"
+            app:layout_constraintCircleRadius="@dimen/radius"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

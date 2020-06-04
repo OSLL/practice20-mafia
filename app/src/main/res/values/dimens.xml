@@ -3,4 +3,8 @@
     <dimen name="radius">100dp</dimen>
     <dimen name="table_radius">280dp</dimen>
     <dimen name="btn_size">60dp</dimen>
+    <dimen name="top_height">0.08</dimen>
+    <dimen name="bottom_height">0.92</dimen>
+    <dimen name="left_width">0.2</dimen>
+    <dimen name="right_width">0.8</dimen>
 </resources>
