@@ -15,12 +15,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:paddingLeft="10dp"/>
+            android:paddingStart="10dp"
+            tools:ignore="RtlSymmetry" />
 
         <LinearLayout
             android:layout_weight="0.7"
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
@@ -49,11 +48,13 @@
         </LinearLayout>
     </TableRow>
 
+    <View android:layout_width="match_parent"
+        android:background="@android:color/black"
+        android:layout_height="1dp" />
+
     <TableRow android:layout_weight="1">
         <LinearLayout
             android:layout_weight="0.2"
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -79,7 +80,7 @@
             tools:context=".MainActivity">
 
 
-            <Button
+            <View
                 android:id="@+id/button"
                 android:layout_width="@dimen/table_radius"
                 android:layout_height="@dimen/table_radius"
@@ -94,7 +95,6 @@
                 android:id="@+id/button1"
                 android:layout_width="@dimen/btn_size"
                 android:layout_height="@dimen/btn_size"
-                android:text="t"
                 app:layout_constraintCircle="@id/button"
                 app:layout_constraintCircleRadius="@dimen/radius"
                 tools:ignore="MissingConstraints"
@@ -104,7 +104,6 @@
                 android:id="@+id/button2"
                 android:layout_width="@dimen/btn_size"
                 android:layout_height="@dimen/btn_size"
-                android:text="t"
                 app:layout_constraintCircle="@id/button"
                 app:layout_constraintCircleRadius="@dimen/radius"
                 app:layout_constraintCircleAngle="60"
@@ -115,7 +114,6 @@
                 android:id="@+id/button3"
                 android:layout_width="@dimen/btn_size"
                 android:layout_height="@dimen/btn_size"
-                android:text="t"
                 app:layout_constraintCircle="@id/button"
                 app:layout_constraintCircleRadius="@dimen/radius"
                 app:layout_constraintCircleAngle="120"
@@ -126,7 +124,6 @@
                 android:id="@+id/button4"
                 android:layout_width="@dimen/btn_size"
                 android:layout_height="@dimen/btn_size"
-                android:text="t"
                 app:layout_constraintCircle="@id/button"
                 app:layout_constraintCircleRadius="@dimen/radius"
                 app:layout_constraintCircleAngle="180"
@@ -137,7 +134,6 @@
                 android:id="@+id/button5"
                 android:layout_width="@dimen/btn_size"
                 android:layout_height="@dimen/btn_size"
-                android:text="t"
                 app:layout_constraintCircle="@id/button"
                 app:layout_constraintCircleRadius="@dimen/radius"
                 app:layout_constraintCircleAngle="240"
@@ -148,7 +144,6 @@
                 android:id="@+id/button6"
                 android:layout_width="@dimen/btn_size"
                 android:layout_height="@dimen/btn_size"
-                android:text="t"
                 app:layout_constraintCircle="@id/button"
                 app:layout_constraintCircleRadius="@dimen/radius"
                 app:layout_constraintCircleAngle="300"
