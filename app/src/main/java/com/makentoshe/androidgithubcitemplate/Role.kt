@@ -1,17 +1,8 @@
 package com.makentoshe.androidgithubcitemplate
 
-import kotlin.concurrent.thread
-
 abstract class Role {
     abstract val text: String
     abstract val role: String
-
-    fun playerChoose(): Int {
-        return 0
-    }
-    fun botChoose(): Int {
-        return 0
-    }
 }
 
 class Simple: Role() {
