@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AndroidGithubCiTemplate</string>
+    <string name="searching_game">Searching game...</string>
 </resources>
