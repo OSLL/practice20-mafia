@@ -16,5 +16,10 @@ class MainActivity : AppCompatActivity() {
             finish()
             startActivity(myIntent)
         }
+
+        exit.setOnClickListener {
+            Log.d("main", "Intent to exit")
+            finish()
+        }
     }
 }
