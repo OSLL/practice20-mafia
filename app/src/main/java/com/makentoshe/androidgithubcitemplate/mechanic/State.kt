@@ -1,4 +1,17 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
-class State {
+abstract class State {
+
+}
+
+class StateManager {
+
+}
+
+class StateDay(): State() {
+
+}
+
+class StateNight(): State() {
+
 }
