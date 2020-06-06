@@ -1,10 +1,17 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
-abstract class State {
+import android.widget.TextView
 
+class StateManager(private var tv: TextView) {
+    private val hist = History(tv)
+    private lateinit var state: State
+
+    fun changeGameState(newState: State) {
+        state = newState
+    }
 }
 
-class StateManager {
+abstract class State {
 
 }
 

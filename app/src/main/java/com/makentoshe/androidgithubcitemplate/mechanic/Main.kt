@@ -1,5 +1,8 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
-class Main {
+import android.widget.Button
+import android.widget.TextView
 
+class Main(var tv: TextView, val btn1: Button, val btn2: Button, val btn3: Button, val btn4: Button, val btn5: Button, val btn6: Button) {
+    
 }
