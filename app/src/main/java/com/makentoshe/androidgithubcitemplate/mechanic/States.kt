@@ -6,13 +6,26 @@ class StateManager(private var tv: TextView) {
     private val hist = History(tv)
     private lateinit var state: State
     private val PM = PlayersManager()
+    var timesOfDay = true
 
-    fun changeGameState(newState: State) {
+    private fun changeGameState(newState: State) {
         state = newState
     }
 
-    fun phase() {
-        
+    fun phase(): Boolean {
+        val whatNext = PM.isEnd()
+
+        if (whatNext == 0) {
+            if (timesOfDay) changeGameState(StateDay())
+            else changeGameState(StateNight())
+            timesOfDay = !timesOfDay
+            state.process(PM, hist)
+            return true
+        }
+
+        if (whatNext == 1) hist.write("Mafia wins")
+        else hist.write("Peaces wins")
+        return false
     }
 }
 
@@ -25,6 +38,8 @@ class StateDay() : State() {
         val votingResults = PM.getVotingResults()
         var playerToErase = 0
         var curCounter = -1
+
+        hist.write("City is wake up")
 
         for (i in votingResults.indices) { //Если кол-во голосов одинаковое, то убиваем того, кто дальше от игрока
             if (votingResults[i] >= curCounter) {
@@ -43,6 +58,8 @@ class StateNight(): State() {
         val nightChooses = PM.getNightEvents()
         val mafiaChoose = nightChooses.first
         val doctorChoose = nightChooses.second
+
+        hist.write("City is falling asleep")
 
         if (mafiaChoose == doctorChoose) {
             hist.write("Nobody died")

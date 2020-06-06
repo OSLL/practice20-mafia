@@ -51,5 +51,24 @@ class PlayersManager() {
             counter[playersList[live].dayAction(getAlives())]++
         return counter
     }
+
+    fun isEnd(): Int {
+        var mafiaAlive = false
+        var citizenAlive = false
+
+        for (live in alives)
+            if (playersList[live].role.role == "Mafia")
+                mafiaAlive = true
+            else
+                citizenAlive = true
+
+        when {
+            mafiaAlive && citizenAlive -> return 0
+            mafiaAlive && !citizenAlive -> return 1
+            !mafiaAlive && citizenAlive -> return 2
+        }
+
+        return -1
+    }
 }
 
