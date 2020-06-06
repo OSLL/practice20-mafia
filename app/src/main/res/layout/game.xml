@@ -111,7 +111,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/button0"
             android:layout_width="@dimen/btn_size"
             android:layout_height="@dimen/btn_size"
             android:background="@drawable/circle_button"
@@ -120,7 +120,7 @@
             tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/button1"
             android:layout_width="@dimen/btn_size"
             android:layout_height="@dimen/btn_size"
             android:background="@drawable/circle_button"
@@ -130,7 +130,7 @@
             tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/button2"
             android:layout_width="@dimen/btn_size"
             android:layout_height="@dimen/btn_size"
             android:background="@drawable/circle_button"
@@ -140,7 +140,7 @@
             tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/button3"
             android:layout_width="@dimen/btn_size"
             android:layout_height="@dimen/btn_size"
             android:background="@drawable/circle_button"
@@ -150,7 +150,7 @@
             tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/button4"
             android:layout_width="@dimen/btn_size"
             android:layout_height="@dimen/btn_size"
             android:background="@drawable/circle_button"
@@ -160,7 +160,7 @@
             tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/button5"
             android:layout_width="@dimen/btn_size"
             android:layout_height="@dimen/btn_size"
             android:background="@drawable/circle_button"

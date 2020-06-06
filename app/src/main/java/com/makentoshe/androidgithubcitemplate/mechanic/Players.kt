@@ -1,6 +1,9 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
-open class Player(var role: Roles, var id: Int) {
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.game.*
+
+open class Player(var role: Roles, var id: Int) : AppCompatActivity() {
     open fun nightAction(alives : ArrayList<Int>) : Int{
         return 0
     }

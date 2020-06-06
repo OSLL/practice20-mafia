@@ -24,12 +24,12 @@ class Game : AppCompatActivity() {
 
         history.movementMethod = ScrollingMovementMethod()
 
+        createPopup(button0)
         createPopup(button1)
         createPopup(button2)
         createPopup(button3)
         createPopup(button4)
         createPopup(button5)
-        createPopup(button6)
     }
 
     private fun createPopup(btn: Button) {
