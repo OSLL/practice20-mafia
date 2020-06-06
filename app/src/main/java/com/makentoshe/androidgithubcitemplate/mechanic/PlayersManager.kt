@@ -2,23 +2,25 @@ package com.makentoshe.androidgithubcitemplate.mechanic
 
 class PlayersManager() {
     private var playersList: Array<Player>
-    private var alives = arrayListOf<Int>(1, 2, 3, 4, 5, 6)
+    private var alives = arrayListOf<Int>(0, 1, 2, 3, 4, 5)
 
     init {
-        val mafiaChoose = (1..6).random()
-        var doctorChoose = (1..6).random()
+        val mafiaChoose = (0..5).random()
+        var doctorChoose = (0..5).random()
         while (doctorChoose == mafiaChoose)
-            doctorChoose = (1..6).random()
+            doctorChoose = (0..5).random()
 
-        playersList = Array<Player>(6) { i -> BotPlayer(Simple(), i + 1) }
-        if (mafiaChoose == 1)
+        playersList = Array<Player>(6) { i -> BotPlayer(Simple(), i) }
+        if (mafiaChoose == 0)
             playersList[mafiaChoose] = Player(Mafia(), mafiaChoose)
         else
             playersList[mafiaChoose] = BotPlayer(Mafia(), mafiaChoose)
-        if (doctorChoose == 1)
+        if (doctorChoose == 0)
             playersList[doctorChoose] = Player(Doctor(), doctorChoose)
         else
             playersList[doctorChoose] = BotPlayer(Doctor(), doctorChoose)
+        if (mafiaChoose != 0 && doctorChoose != 0)
+            playersList[0] = Player(Simple(), 0)
     }
 
     fun eraseId(id: Int) {
@@ -30,8 +32,8 @@ class PlayersManager() {
     }
 
     fun getNightEvents(): Pair<Int, Int> {
-        var doctorChoose = 0
-        var mafiaChoose = 0
+        var doctorChoose = -1
+        var mafiaChoose = -1
 
         for (live in alives)
             if (playersList[live].role.role == "Mafia")
@@ -43,7 +45,11 @@ class PlayersManager() {
     }
 
     fun getVotingResults(): Array<Int> {
-        return arrayOf(1, 2, 3)
+        var counter = arrayOf(0, 0, 0, 0, 0, 0)
+
+        for (live in alives)
+            counter[playersList[live].dayAction(getAlives())]++
+        return counter
     }
 }
 
