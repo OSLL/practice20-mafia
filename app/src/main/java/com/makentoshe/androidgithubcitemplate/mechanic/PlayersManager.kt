@@ -1,7 +1,7 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
 class PlayersManager() {
-    lateinit var playersList: Array<Player>
+    private var playersList: Array<Player>
     private var alives = arrayListOf<Int>(1, 2, 3, 4, 5, 6)
 
     init {
@@ -24,7 +24,16 @@ class PlayersManager() {
     }
 
     fun getNightEvents(): Pair<Int, Int> {
-        return Pair(0, 0)
+        var doctorChoose = 0
+        var mafiaChoose = 0
+
+        for (live in alives)
+            if (playersList[live].role.role == "Mafia")
+                mafiaChoose = playersList[live].nightAction(getAlives())
+            else if (playersList[live].role.role == "Doctor")
+                doctorChoose = playersList[live].nightAction(getAlives())
+
+        return Pair(mafiaChoose, doctorChoose)
     }
 
     fun getVotingResults(): Array<Int> {
