@@ -1,12 +1,14 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
-abstract class Roles {
-    abstract val text: String
-    abstract val role: String
-    abstract fun choose(alives : ArrayList<Int>, myId : Int) : Int
+interface Roles {
+    val text : String
+        get() = this.toString()
+    val role : String
+        get() = this.toString()
+    fun choose(alives : ArrayList<Int>, myId : Int) : Int
 }
 
-class Simple() : Roles() {
+class Simple() : Roles {
     override val text: String
         get() = "Sleep"
     override val role: String
@@ -17,7 +19,7 @@ class Simple() : Roles() {
     }
 }
 
-class Doctor() : Roles() {
+class Doctor() : Roles {
     override val text: String
         get() = "Choose sbd to heal"
     override val role: String
@@ -31,7 +33,7 @@ class Doctor() : Roles() {
     }
 }
 
-class Mafia() : Roles() {
+class Mafia() : Roles {
     override val text: String
         get() = "Choose sbd to kill"
     override val role: String
