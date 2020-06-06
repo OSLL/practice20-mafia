@@ -6,8 +6,13 @@ class StateManager(private var tv: TextView) {
     private val hist = History(tv)
     private lateinit var state: State
     private val PM = PlayersManager()
+
     fun changeGameState(newState: State) {
         state = newState
+    }
+
+    fun phase() {
+        
     }
 }
 
@@ -20,12 +25,14 @@ class StateDay() : State() {
         val votingResults = PM.getVotingResults()
         var playerToErase = 0
         var curCounter = -1
+
         for (i in votingResults.indices) { //Если кол-во голосов одинаковое, то убиваем того, кто дальше от игрока
             if (votingResults[i] >= curCounter) {
                 curCounter = votingResults[i]
                 playerToErase = i
             }
         }
+
         hist.write("Player${playerToErase + 1} die today")
         PM.eraseId(playerToErase)
     }
@@ -36,6 +43,7 @@ class StateNight(): State() {
         val nightChooses = PM.getNightEvents()
         val mafiaChoose = nightChooses.first
         val doctorChoose = nightChooses.second
+
         if (mafiaChoose == doctorChoose) {
             hist.write("Nobody died")
         } else {
