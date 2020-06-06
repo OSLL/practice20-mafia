@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AndroidGithubCiTemplate</string>
-    <string name="searching_game">Searching game...</string>
+    <string name="searching_game">Searching game…</string>
+    <string name="join_game">Join game</string>
 </resources>
