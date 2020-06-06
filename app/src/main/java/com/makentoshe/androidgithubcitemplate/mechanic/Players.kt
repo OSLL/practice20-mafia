@@ -1,8 +1,6 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
-open class Player {
-    lateinit var role: Roles
-
+open class Player(private var role: Roles, private var id: Int) {
     open fun nightAction() {
 
     }
@@ -12,7 +10,7 @@ open class Player {
     }
 }
 
-class BotPlayer(): Player() {
+class BotPlayer(role: Roles, id: Int): Player(role, id) {
     override fun nightAction() {
 
     }

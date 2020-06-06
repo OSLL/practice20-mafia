@@ -1,7 +1,26 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
-class PlayersManager {
+class PlayersManager() {
     lateinit var playersList: Array<Player>
-    lateinit var alives: ArrayList<Int>
+    private var alives = arrayListOf<Int>(1, 2, 3, 4, 5, 6)
+
+    init {
+        val mafiaChoose = (1..6).random()
+        var doctorChoose = (1..6).random()
+        while (doctorChoose == mafiaChoose)
+            doctorChoose = (1..6).random()
+
+        playersList = Array<Player>(6) { i -> Player(Simple(), i + 1) }
+        playersList[mafiaChoose] = Player(Mafia(), mafiaChoose)
+        playersList[doctorChoose] = Player(Doctor(), doctorChoose)
+    }
+
+    fun eraseId(id: Int) {
+        alives.remove(id)
+    }
+
+    fun getAlives() : ArrayList<Int> {
+        return alives
+    }
 }
 
