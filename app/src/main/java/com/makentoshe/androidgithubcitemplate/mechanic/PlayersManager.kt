@@ -10,9 +10,15 @@ class PlayersManager() {
         while (doctorChoose == mafiaChoose)
             doctorChoose = (1..6).random()
 
-        playersList = Array<Player>(6) { i -> Player(Simple(), i + 1) }
-        playersList[mafiaChoose] = Player(Mafia(), mafiaChoose)
-        playersList[doctorChoose] = Player(Doctor(), doctorChoose)
+        playersList = Array<Player>(6) { i -> BotPlayer(Simple(), i + 1) }
+        if (mafiaChoose == 1)
+            playersList[mafiaChoose] = Player(Mafia(), mafiaChoose)
+        else
+            playersList[mafiaChoose] = BotPlayer(Mafia(), mafiaChoose)
+        if (doctorChoose == 1)
+            playersList[doctorChoose] = Player(Doctor(), doctorChoose)
+        else
+            playersList[doctorChoose] = BotPlayer(Doctor(), doctorChoose)
     }
 
     fun eraseId(id: Int) {
