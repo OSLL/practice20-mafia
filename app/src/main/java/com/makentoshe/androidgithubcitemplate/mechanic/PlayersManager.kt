@@ -1,6 +1,6 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
-class PlayerManager {
+class PlayersManager {
     lateinit var playersList: Array<Player>
     lateinit var alives: Array<Int>
 }
