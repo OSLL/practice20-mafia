@@ -33,6 +33,14 @@ class StateDay() : State() {
 
 class StateNight(): State() {
     override fun process(PM: PlayersManager, hist: History) {
-        TODO("Not yet implemented")
+        val nightChooses = PM.getNightEvents()
+        val mafiaChoose = nightChooses.first
+        val doctorChoose = nightChooses.second
+        if (mafiaChoose == doctorChoose) {
+            hist.write("Nobody died")
+        } else {
+            hist.write("Player${mafiaChoose + 1} died")
+            PM.eraseId(mafiaChoose)
+        }
     }
 }
