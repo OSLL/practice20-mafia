@@ -45,7 +45,7 @@ class PlayersManager() {
     }
 
     fun getVotingResults(): Array<Int> {
-        var counter = arrayOf(0, 0, 0, 0, 0, 0)
+        val counter = arrayOf(0, 0, 0, 0, 0, 0)
 
         for (live in alives)
             counter[playersList[live].dayAction(getAlives())]++
