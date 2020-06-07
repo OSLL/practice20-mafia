@@ -1,6 +1,6 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
-class Player(private val role: Roles, private val id: Int, private val views: Views) {
+class Player(val role: Roles, private val id: Int, private val views: Views) {
     fun nightAction(): Int {
         return 0
     }

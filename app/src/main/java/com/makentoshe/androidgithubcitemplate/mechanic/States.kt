@@ -4,13 +4,13 @@ import android.widget.TextView
 
 class StateManager(private val pm: PlayersManager, private var hist: History) {
     private var state: State = StateDay()
-    var timesOfDay = true
 
-    private fun changeGameState(newState: State) {
-        state = newState
+    fun changePhase() {
+        if (this.getState() == "Day") this.state = StateNight()
+        else this.state = StateDay()
     }
 
-    fun phase(): Boolean {
+    /*fun phase(): Boolean {
         val whatNext = pm.isEnd()
 
         if (whatNext == 0) {
@@ -24,7 +24,7 @@ class StateManager(private val pm: PlayersManager, private var hist: History) {
         if (whatNext == 1) hist.write("Mafia wins")
         else hist.write("Peaces wins")
         return false
-    }
+    }*/
 
     fun getState(): String = state.text
 }

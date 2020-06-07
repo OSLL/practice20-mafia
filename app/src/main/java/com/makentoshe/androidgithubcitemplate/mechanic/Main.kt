@@ -12,6 +12,13 @@ class Main(var hist: TextView, private val arrayBtn: Array<Button>,
     private val pm = PlayersManager(views, history)
     private val sm = StateManager(pm, history)
 
+    init {
+        while (pm.isEnd() == 0) {
+
+        }
+    }
+
+
     fun playerChoose(id: Int) {
         if (sm.getState() == "Day") pm.playerChooseDay(id)
         else pm.playerChooseNight(id)
