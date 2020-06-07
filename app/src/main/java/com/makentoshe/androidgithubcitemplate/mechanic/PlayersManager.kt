@@ -1,8 +1,9 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
-class PlayersManager() {
+class PlayersManager(views: Views, hist: History) {
     private var playersList: Array<Player>
     private var alives = arrayListOf<Int>(0, 1, 2, 3, 4, 5)
+    private var curAlive = 0
 
     init {
         val mafiaChoose = (0..5).random()
@@ -10,17 +11,29 @@ class PlayersManager() {
         while (doctorChoose == mafiaChoose)
             doctorChoose = (0..5).random()
 
-        playersList = Array<Player>(6) { i -> BotPlayer(Simple(), i) }
-        if (mafiaChoose == 0)
-            playersList[mafiaChoose] = Player(Mafia(), mafiaChoose)
-        else
-            playersList[mafiaChoose] = BotPlayer(Mafia(), mafiaChoose)
-        if (doctorChoose == 0)
-            playersList[doctorChoose] = Player(Doctor(), doctorChoose)
-        else
-            playersList[doctorChoose] = BotPlayer(Doctor(), doctorChoose)
-        if (mafiaChoose != 0 && doctorChoose != 0)
-            playersList[0] = Player(Simple(), 0)
+        playersList = Array<Player>(6) { i -> Player(
+            when(i) {
+                mafiaChoose -> Mafia()
+                doctorChoose -> Doctor()
+                else -> Citizen()
+            }, i, views) }
+    }
+
+    fun startStepDay(): Boolean {
+        curAlive = (curAlive + 1) % alives.size
+        if (curAlive == 0)
+            return false
+
+        playersList[alives[curAlive]].dayAction()
+        return true
+    }
+
+    fun startStepNight() {
+
+    }
+
+    fun playerChoose(id: Int) {
+
     }
 
     fun eraseId(id: Int) {
@@ -35,11 +48,11 @@ class PlayersManager() {
         var doctorChoose = -1
         var mafiaChoose = -1
 
-        for (live in alives)
+        /*for (live in alives)
             if (playersList[live].role.role == "Mafia")
                 mafiaChoose = playersList[live].nightAction(getAlives())
             else if (playersList[live].role.role == "Doctor")
-                doctorChoose = playersList[live].nightAction(getAlives())
+                doctorChoose = playersList[live].nightAction(getAlives())*/
 
         return Pair(mafiaChoose, doctorChoose)
     }
@@ -47,12 +60,13 @@ class PlayersManager() {
     fun getVotingResults(): Array<Int> {
         val counter = arrayOf(0, 0, 0, 0, 0, 0)
 
-        for (live in alives)
-            counter[playersList[live].dayAction(getAlives())]++
+        /*for (live in alives)
+            counter[playersList[live].dayAction(getAlives())]++*/
         return counter
     }
 
     fun isEnd(): Int {
+        /*
         var mafiaAlive = false
         var citizenAlive = false
 
@@ -67,7 +81,7 @@ class PlayersManager() {
             mafiaAlive && !citizenAlive -> return 1
             !mafiaAlive && citizenAlive -> return 2
         }
-
+        */
         return -1
     }
 }

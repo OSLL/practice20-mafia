@@ -40,6 +40,7 @@
         tools:context=".MainActivity">
 
         <TextView
+            android:id="@+id/icon"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.1"
@@ -47,18 +48,20 @@
             android:text="icon" />
 
         <TextView
+            android:id="@+id/state"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.8"
             android:gravity="center"
             android:text="Состояние" />
 
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.1"
             android:gravity="center"
-            android:text="03:00" />
+            android:text="@string/start"
+            android:textSize="12sp"/>
     </LinearLayout>
 
     <View

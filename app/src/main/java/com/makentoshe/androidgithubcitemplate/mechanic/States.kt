@@ -2,10 +2,8 @@ package com.makentoshe.androidgithubcitemplate.mechanic
 
 import android.widget.TextView
 
-class StateManager(private var tv: TextView) {
-    private val hist = History(tv)
+class StateManager(private val pm: PlayersManager, private var hist: History) {
     private lateinit var state: State
-    private val PM = PlayersManager()
     var timesOfDay = true
 
     private fun changeGameState(newState: State) {
@@ -13,13 +11,13 @@ class StateManager(private var tv: TextView) {
     }
 
     fun phase(): Boolean {
-        val whatNext = PM.isEnd()
+        val whatNext = pm.isEnd()
 
         if (whatNext == 0) {
             if (timesOfDay) changeGameState(StateDay())
             else changeGameState(StateNight())
             timesOfDay = !timesOfDay
-            state.process(PM, hist)
+            state.process(pm, hist)
             return true
         }
 
@@ -27,13 +25,18 @@ class StateManager(private var tv: TextView) {
         else hist.write("Peaces wins")
         return false
     }
+
+    fun getState(): String = state.text
 }
 
 abstract class State {
+    abstract val text: String
     abstract fun process(PM: PlayersManager, hist: History)
 }
 
 class StateDay() : State() {
+    override val text: String
+        get() = "Day"
     override fun process(PM: PlayersManager, hist: History) {
         val votingResults = PM.getVotingResults()
         var playerToErase = 0
@@ -54,6 +57,8 @@ class StateDay() : State() {
 }
 
 class StateNight(): State() {
+    override val text: String
+        get() = "Night"
     override fun process(PM: PlayersManager, hist: History) {
         val nightChooses = PM.getNightEvents()
         val mafiaChoose = nightChooses.first

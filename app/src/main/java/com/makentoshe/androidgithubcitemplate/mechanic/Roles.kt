@@ -8,7 +8,7 @@ interface Roles {
     fun choose(alives : ArrayList<Int>, myId : Int) : Int
 }
 
-class Simple() : Roles {
+class Citizen() : Roles {
     override val text: String
         get() = "Sleep"
     override val role: String
