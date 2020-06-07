@@ -7,12 +7,9 @@ import com.makentoshe.androidgithubcitemplate.R
 
 class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<PopupMenu>,
             private val icon: TextView, private val state: TextView) {
-    fun setBtnInactive(id: Int) {
-        arrayBtn[id].setBackgroundResource(R.drawable.circle_button)
-    }
-
-    fun setBtnActive(id : Int)
+    fun setBtnActive(id : Int, prevId: Int)
     {
+        arrayBtn[prevId].setBackgroundResource(R.drawable.circle_button)
         arrayBtn[id].setBackgroundResource(R.drawable.circle_button_active)
     }
 

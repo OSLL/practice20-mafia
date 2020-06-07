@@ -19,8 +19,18 @@ class Main(var hist: TextView, private val arrayBtn: Array<Button>,
 
     fun startStep() {
         val res = if (sm.getState() == "Day") pm.startStepDay() else pm.startStepNight()
+        var endChecker: Int
 
-        if (!res)
+        if (!res) {
+            sm.process()
             sm.changePhase()
+            pm.changePhaseUpdateBackground()
+
+            endChecker = pm.isEnd()
+            if (endChecker == 1)
+                history.write("Mafia wins")
+            else if (endChecker == 2)
+                history.write("Citizen wins")
+        }
     }
 }

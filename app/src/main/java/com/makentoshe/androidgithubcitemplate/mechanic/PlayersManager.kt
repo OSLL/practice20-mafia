@@ -7,6 +7,7 @@ class PlayersManager(views: Views, hist: History) {
     private var mafiaChoose = (-1e9).toInt()
     private var doctorChoose = (-1e9).toInt()
     private var votingResults: Array<Int>
+    private var lastId = -1
 
     init {
         val mafiaChoose = (0..5).random()
@@ -27,21 +28,29 @@ class PlayersManager(views: Views, hist: History) {
     }
 
     fun startStepDay(): Boolean {
-        playersList[alives[curAlive]].dayAction()
         curAlive = (curAlive + 1) % alives.size
 
-        if (curAlive == 0)
+        if (curAlive == 0) {
+            lastId = alives[alives.size - 1]
             return false
+        }
+        playersList[alives[curAlive]].dayAction(alives[(curAlive + alives.size - 1) % alives.size])
         return true
     }
 
     fun startStepNight(): Boolean {
-        playersList[alives[curAlive]].nightAction()
         curAlive = (curAlive + 1) % alives.size
 
-        if (curAlive == 0)
+        if (curAlive == 0) {
+            lastId = alives[alives.size - 1]
             return false
+        }
+        playersList[alives[curAlive]].nightAction(alives[(curAlive + alives.size - 1) % alives.size])
         return true
+    }
+
+    fun changePhaseUpdateBackground() {
+        playersList[alives[0]].dayAction(lastId)
     }
 
     fun playerChooseDay(id: Int) {

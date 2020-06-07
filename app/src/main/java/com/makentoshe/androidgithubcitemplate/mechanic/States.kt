@@ -27,6 +27,9 @@ class StateManager(private val pm: PlayersManager, private var hist: History) {
     }*/
 
     fun getState(): String = state.text
+    fun process() {
+        state.process(pm, hist)
+    }
 }
 
 abstract class State {
