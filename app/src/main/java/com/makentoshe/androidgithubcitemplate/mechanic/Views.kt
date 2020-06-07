@@ -27,4 +27,8 @@ class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<
     fun allPopups() {
 
     }
+
+    fun changeStateText (text: String) {
+        state.text = text
+    }
 }

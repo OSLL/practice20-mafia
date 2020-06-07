@@ -116,6 +116,7 @@
 
         <Button
             android:id="@+id/button0"
+            android:tag="0"
             android:layout_width="@dimen/btn_size"
             android:layout_height="@dimen/btn_size"
             android:background="@drawable/circle_button_active"
@@ -125,6 +126,7 @@
 
         <Button
             android:id="@+id/button1"
+            android:tag="1"
             android:layout_width="@dimen/btn_size"
             android:layout_height="@dimen/btn_size"
             android:background="@drawable/circle_button"
@@ -135,6 +137,7 @@
 
         <Button
             android:id="@+id/button2"
+            android:tag="2"
             android:layout_width="@dimen/btn_size"
             android:layout_height="@dimen/btn_size"
             android:background="@drawable/circle_button"
@@ -145,6 +148,7 @@
 
         <Button
             android:id="@+id/button3"
+            android:tag="3"
             android:layout_width="@dimen/btn_size"
             android:layout_height="@dimen/btn_size"
             android:background="@drawable/circle_button"
@@ -155,6 +159,7 @@
 
         <Button
             android:id="@+id/button4"
+            android:tag="4"
             android:layout_width="@dimen/btn_size"
             android:layout_height="@dimen/btn_size"
             android:background="@drawable/circle_button"
@@ -165,6 +170,7 @@
 
         <Button
             android:id="@+id/button5"
+            android:tag="5"
             android:layout_width="@dimen/btn_size"
             android:layout_height="@dimen/btn_size"
             android:background="@drawable/circle_button"
