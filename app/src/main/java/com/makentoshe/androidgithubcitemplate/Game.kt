@@ -11,9 +11,10 @@ import kotlinx.android.synthetic.main.game.*
 import com.makentoshe.androidgithubcitemplate.mechanic.Main
 
 class Game : AppCompatActivity() {
-    protected val arrayBtn = arrayOf(button0, button1, button2, button3, button4, button5)
-    protected val arrayPm = ArrayList<PopupMenu>(0)
+    lateinit var arrayBtn: Array<Button>
+    val arrayPm = ArrayList<PopupMenu>(6)
     lateinit var main: Main
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.game)
@@ -28,6 +29,7 @@ class Game : AppCompatActivity() {
         createPopup(button4, arrayPm)
         createPopup(button5, arrayPm)
 
+        arrayBtn = arrayOf(button0, button1, button2, button3, button4, button5)
         main = Main(history, arrayBtn, arrayPm, icon, state)
     }
 
