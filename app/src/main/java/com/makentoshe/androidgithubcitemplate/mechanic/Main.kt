@@ -12,18 +12,15 @@ class Main(var hist: TextView, private val arrayBtn: Array<Button>,
     private val pm = PlayersManager(views, history)
     private val sm = StateManager(pm, history)
 
-    init {
-
-    }
-
-
     fun playerChoose(id: Int) {
         if (sm.getState() == "Day") pm.playerChooseDay(id)
         else pm.playerChooseNight(id)
     }
 
     fun startStep() {
-        if (sm.getState() == "Day") pm.startStepDay()
-        else pm.startStepNight()
+        val res = if (sm.getState() == "Day") pm.startStepDay() else pm.startStepNight()
+
+        if (!res)
+            sm.changePhase()
     }
 }

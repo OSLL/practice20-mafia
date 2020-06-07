@@ -27,21 +27,20 @@ class PlayersManager(views: Views, hist: History) {
     }
 
     fun startStepDay(): Boolean {
+        playersList[alives[curAlive]].dayAction()
         curAlive = (curAlive + 1) % alives.size
+
         if (curAlive == 0)
             return false
-
-        playersList[alives[curAlive]].dayAction()
         return true
     }
 
     fun startStepNight(): Boolean {
+        playersList[alives[curAlive]].nightAction()
         curAlive = (curAlive + 1) % alives.size
 
         if (curAlive == 0)
             return false
-
-        playersList[alives[curAlive]].nightAction()
         return true
     }
 
