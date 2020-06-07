@@ -49,7 +49,7 @@ class Game : AppCompatActivity() {
         popupMenu.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.menu1 -> {
-                    main.playerChoose(0)
+                    main.playerChoose(btn.tag.toString().toInt())
                     true
                 }
                 else -> false
