@@ -40,7 +40,7 @@ class Game : AppCompatActivity() {
     private fun createPopup(btn: Button, arrPm: ArrayList<PopupMenu>) {
         val popupMenu = PopupMenu(this, btn)
         arrPm.plus(popupMenu)
-        popupMenu.inflate(R.menu.sleep)
+        popupMenu.inflate(R.menu.choose)
 
         btn.setOnClickListener {
             popupMenu.show()
