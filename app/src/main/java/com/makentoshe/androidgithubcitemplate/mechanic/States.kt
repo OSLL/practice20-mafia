@@ -61,8 +61,8 @@ class StateNight(): State() {
         get() = "Night"
     override fun process(PM: PlayersManager, hist: History) {
         val nightChooses = PM.getNightEvents()
-        val mafiaChoose = nightChooses.first
-        val doctorChoose = nightChooses.second
+        val mafiaChoose = nightChooses[0]
+        val doctorChoose = nightChooses[1]
 
         hist.write("City is falling asleep")
 
