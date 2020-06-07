@@ -4,7 +4,9 @@ class PlayersManager(views: Views, hist: History) {
     private var playersList: Array<Player>
     private var alives = arrayListOf<Int>(0, 1, 2, 3, 4, 5)
     private var curAlive = 0
-
+    private var mafiaChoose = (-1e9).toInt()
+    private var doctorChoose = (-1e9).toInt()
+    private var votingResults: Array<Int>
     init {
         val mafiaChoose = (0..5).random()
         var doctorChoose = (0..5).random()
@@ -17,26 +19,44 @@ class PlayersManager(views: Views, hist: History) {
                 doctorChoose -> Doctor()
                 else -> Citizen()
             }, i, views) }
+        votingResults = arrayOf(0, 0, 0, 0, 0, 0)
     }
 
     fun startStepDay(): Boolean {
         curAlive = (curAlive + 1) % alives.size
-        /*
-        if (curAlive == 0)
+        /*if (curAlive == 0) {
+            clearVoting()
             return false
+        }*/
 
-         */
+
 
         playersList[alives[curAlive]].dayAction()
         return true
     }
 
-    fun startStepNight() {
+    fun startStepNight(): Boolean {
+        curAlive = (curAlive + 1) % alives.size
 
+        if (curAlive == 0) {
+            mafiaChoose = (-1e9).toInt()
+            doctorChoose = (-1e9).toInt()
+            return false
+        }
+
+        playersList[alives[curAlive]].nightAction()
+        return true
     }
 
-    fun playerChoose(id: Int) {
+    fun playerChooseDay(id: Int) {
+        votingResults[id] += 1
+    }
 
+    fun playerChooseNight(id: Int) {
+        val isMafia = playersList[alives[curAlive]].getRole() == "Mafia"
+        val isDoctor = playersList[alives[curAlive]].getRole() == "Doctor"
+        if (isMafia) mafiaChoose = id
+        else if (isDoctor) doctorChoose = id
     }
 
     fun eraseId(id: Int) {
@@ -47,9 +67,8 @@ class PlayersManager(views: Views, hist: History) {
         return alives
     }
 
-    fun getNightEvents(): Pair<Int, Int> {
-        var doctorChoose = -1
-        var mafiaChoose = -1
+    fun getNightEvents(): Array<Int> {
+        val res = arrayOf(mafiaChoose, doctorChoose)
 
         /*for (live in alives)
             if (playersList[live].role.role == "Mafia")
@@ -57,15 +76,13 @@ class PlayersManager(views: Views, hist: History) {
             else if (playersList[live].role.role == "Doctor")
                 doctorChoose = playersList[live].nightAction(getAlives())*/
 
-        return Pair(mafiaChoose, doctorChoose)
+        return res
     }
 
     fun getVotingResults(): Array<Int> {
-        val counter = arrayOf(0, 0, 0, 0, 0, 0)
-
         /*for (live in alives)
             counter[playersList[live].dayAction(getAlives())]++*/
-        return counter
+        return votingResults
     }
 
     fun isEnd(): Int {
@@ -86,6 +103,10 @@ class PlayersManager(views: Views, hist: History) {
         }
         */
         return -1
+    }
+
+    fun clearVoting() {
+        votingResults = arrayOf(0, 0, 0, 0, 0, 0)
     }
 }
 

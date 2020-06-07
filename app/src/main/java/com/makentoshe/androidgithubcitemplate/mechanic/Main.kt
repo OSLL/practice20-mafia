@@ -13,7 +13,8 @@ class Main(var hist: TextView, private val arrayBtn: Array<Button>,
     private val sm = StateManager(pm, history)
 
     fun playerChoose(id: Int) {
-        pm.playerChoose(id)
+        if (sm.getState() == "Day") pm.playerChooseDay(id)
+        else pm.playerChooseNight(id)
     }
 
     fun startStep() {
