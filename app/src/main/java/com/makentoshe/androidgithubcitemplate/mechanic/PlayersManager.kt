@@ -34,6 +34,7 @@ class PlayersManager(views: Views, hist: History) {
             lastId = alives[alives.size - 1]
             return false
         }
+        playersList[alives[curAlive]].views.changeStateText(playersList[alives[curAlive]].getVoteText())
         playersList[alives[curAlive]].dayAction(alives[(curAlive + alives.size - 1) % alives.size])
         return true
     }
@@ -45,12 +46,14 @@ class PlayersManager(views: Views, hist: History) {
             lastId = alives[alives.size - 1]
             return false
         }
+        playersList[alives[curAlive]].views.changeStateText(playersList[alives[curAlive]].getRoleText())
         playersList[alives[curAlive]].nightAction(alives[(curAlive + alives.size - 1) % alives.size])
         return true
     }
 
     fun changePhaseUpdateBackground() {
         playersList[alives[0]].dayAction(lastId)
+        playersList[alives[0]].views.changeStateText(playersList[alives[0]].getVoteText())
     }
 
     fun playerChooseDay(id: Int) {

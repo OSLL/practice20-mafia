@@ -5,6 +5,8 @@ interface Roles {
         get() = this.toString()
     val role : String
         get() = this.toString()
+    val voteText: String
+        get() = "Vote now"
     fun choose(alives : ArrayList<Int>, myId : Int) : Int
 }
 
@@ -13,7 +15,6 @@ class Citizen() : Roles {
         get() = "Sleep"
     override val role: String
         get() = "Simple"
-
     override fun choose(alives : ArrayList<Int>, myId : Int): Int {
         return -1
     }
