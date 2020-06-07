@@ -21,8 +21,11 @@ class PlayersManager(views: Views, hist: History) {
 
     fun startStepDay(): Boolean {
         curAlive = (curAlive + 1) % alives.size
+        /*
         if (curAlive == 0)
             return false
+
+         */
 
         playersList[alives[curAlive]].dayAction()
         return true

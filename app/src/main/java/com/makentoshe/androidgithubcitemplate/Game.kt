@@ -29,6 +29,10 @@ class Game : AppCompatActivity() {
         createPopup(button4, arrayPm)
         createPopup(button5, arrayPm)
 
+        start.setOnClickListener {
+            main.startStep()
+        }
+
         arrayBtn = arrayOf(button0, button1, button2, button3, button4, button5)
         main = Main(history, arrayBtn, arrayPm, icon, state)
     }

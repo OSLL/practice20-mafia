@@ -6,6 +6,7 @@ class Player(private val role: Roles, private val id: Int, private val views: Vi
     }
 
     fun dayAction(): Int {
+        views.setBtnActive(id)
         return 0
     }
 }

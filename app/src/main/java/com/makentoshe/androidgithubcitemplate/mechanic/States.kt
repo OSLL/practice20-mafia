@@ -3,7 +3,7 @@ package com.makentoshe.androidgithubcitemplate.mechanic
 import android.widget.TextView
 
 class StateManager(private val pm: PlayersManager, private var hist: History) {
-    private lateinit var state: State
+    private var state: State = StateDay()
     var timesOfDay = true
 
     private fun changeGameState(newState: State) {
