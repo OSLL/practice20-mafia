@@ -13,9 +13,7 @@ class Main(var hist: TextView, private val arrayBtn: Array<Button>,
     private val sm = StateManager(pm, history)
 
     init {
-        while (pm.isEnd() == 0) {
 
-        }
     }
 
 
