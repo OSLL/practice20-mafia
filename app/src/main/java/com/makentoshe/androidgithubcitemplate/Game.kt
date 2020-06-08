@@ -21,6 +21,7 @@ class Game : AppCompatActivity() {
     val arrayPm = ArrayList<PopupMenu>(6)
     lateinit var main: Main
     var isClicked = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.game)
@@ -34,8 +35,7 @@ class Game : AppCompatActivity() {
 
         start.setOnClickListener {
             if (!isClicked) {
-               //Toast
-                Toast.makeText(this, "Choose smbd!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Choose smb!", Toast.LENGTH_SHORT).show()
             } else {
                 main.startStep()
                 isClicked = false;
@@ -50,6 +50,7 @@ class Game : AppCompatActivity() {
         }
 
         arrayBtn = arrayOf(button0, button1, button2, button3, button4, button5)
+        main = Main(history, arrayBtn, arrayPm, icon, state, start)
         main = Main(history, arrayBtn, arrayPm, icon, state, exit)
     }
 

@@ -1,5 +1,6 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.PopupMenu
@@ -37,8 +38,14 @@ class Main(var hist: TextView, private val arrayBtn: Array<Button>,
                 views.showExit()
             }
             else if (endChecker == 2) {
+                views.changeStateText("Mafia wins")
+                start.visibility = View.GONE
+            } else if (endChecker == 2) {
                 history.write("Citizen wins")
                 views.showExit()
+            }
+                views.changeStateText("Citizen wins")
+                start.visibility = View.GONE
             }
         }
     }

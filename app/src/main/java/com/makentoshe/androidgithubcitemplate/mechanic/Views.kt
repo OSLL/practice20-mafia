@@ -1,6 +1,7 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
 import android.view.View
+import android.annotation.SuppressLint
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.PopupMenu
@@ -19,7 +20,7 @@ class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<
         arrayBtn[id].setBackgroundResource(R.drawable.circle_button_active)
     }
 
-    fun deletePopups() {
+    fun blockPopups() {
 
     }
 
@@ -53,5 +54,19 @@ class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<
 
     fun showExit() {
         exit.visibility = View.VISIBLE
+    }
+
+    fun cntInit(id: Int) {
+        arrayBtn[id].text = "0"
+    }
+
+    @SuppressLint("SetTextI18n")
+    fun cntIncrement(id: Int) {
+        arrayBtn[id].text = "${arrayBtn[id].text.toString().toInt() + 1}"
+    }
+
+    fun cntsDel() {
+        for (btn in arrayBtn)
+            btn.text = ""
     }
 }
