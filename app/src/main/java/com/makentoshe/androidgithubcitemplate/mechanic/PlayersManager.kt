@@ -65,7 +65,7 @@ class PlayersManager(var views: Views, var hist: History) {
     }
 
     fun eraseId(id: Int) {
-        views.setPlayerDie(alives[id])
+        views.setPlayerDie(id)
         alives.remove(id)
     }
 
