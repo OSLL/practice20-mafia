@@ -46,9 +46,10 @@ class Game : AppCompatActivity() {
         arrPm.add(popupMenu)
         popupMenu.inflate(R.menu.choose)
 
-        btn.setOnClickListener {
-            popupMenu.show()
-        }
+        if (btn.tag.toString().toInt() != 0)
+            btn.setOnClickListener {
+                popupMenu.show()
+            }
 
         popupMenu.setOnMenuItemClickListener {
             when (it.itemId) {
