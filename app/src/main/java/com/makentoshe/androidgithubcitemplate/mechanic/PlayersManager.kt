@@ -56,6 +56,10 @@ class PlayersManager(var views: Views, var hist: History) {
         else pFirst.activeBtnAction()
         views.changeStateText(pFirst.getText(time))
         views.setIcon(if (time == "Day") "sun" else "moon")
+
+        for (i in alives.indices)
+            if (i != curAlive)
+                views.restorePopup(i)
     }
 
     fun playerChooseDay(id: Int) {
