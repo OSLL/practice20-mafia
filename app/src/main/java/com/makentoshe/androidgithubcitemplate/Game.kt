@@ -56,6 +56,7 @@ class Game : AppCompatActivity() {
                 R.id.menu1 -> {
                     main.playerChoose(btn.tag.toString().toInt())
                     blockPopups()
+                    main.changeStateString("Give phone to next player")
                     isClicked = true
                     true
                 }

@@ -18,6 +18,10 @@ class Main(var hist: TextView, private val arrayBtn: Array<Button>,
         else pm.playerChooseNight(id)
     }
 
+    fun changeStateString(text : String) {
+        views.changeStateText(text)
+    }
+
     fun startStep() {
         val res = if (sm.getState() == "Day") pm.startStep("Day") else pm.startStep("Night")
         var endChecker: Int
