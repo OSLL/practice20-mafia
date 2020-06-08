@@ -50,8 +50,7 @@ class Game : AppCompatActivity() {
         }
 
         arrayBtn = arrayOf(button0, button1, button2, button3, button4, button5)
-        main = Main(history, arrayBtn, arrayPm, icon, state, start)
-        main = Main(history, arrayBtn, arrayPm, icon, state, exit)
+        main = Main(history, arrayBtn, arrayPm, icon, state, exit, start)
     }
 
     private fun createPopup(btn: Button, arrPm: ArrayList<PopupMenu>) {

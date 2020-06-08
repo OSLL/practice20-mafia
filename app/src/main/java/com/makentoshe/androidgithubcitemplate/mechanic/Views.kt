@@ -9,7 +9,8 @@ import android.widget.TextView
 import com.makentoshe.androidgithubcitemplate.R
 
 class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<PopupMenu>,
-            private val icon: ImageView, private val state: TextView, private val exit: Button) {
+            private val icon: ImageView, private val state: TextView,
+            private val exit: Button, private val start: Button) {
     fun setBtnActive(id : Int, prevId: Int)
     {
         arrayBtn[prevId].setBackgroundResource(R.drawable.circle_button)
@@ -53,6 +54,7 @@ class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<
     }
 
     fun showExit() {
+        start.visibility = View.INVISIBLE
         exit.visibility = View.VISIBLE
     }
 
