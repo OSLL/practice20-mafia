@@ -12,10 +12,10 @@ import kotlinx.android.synthetic.main.game.*
 import com.makentoshe.androidgithubcitemplate.mechanic.Main
 
 class Game : AppCompatActivity() {
-    lateinit var arrayBtn: Array<Button>
-    val arrayPm = ArrayList<PopupMenu>(6)
-    lateinit var main: Main
-    var isClicked = false
+    private lateinit var arrayBtn: Array<Button>
+    private val arrayPm = ArrayList<PopupMenu>(6)
+    private lateinit var main: Main
+    private var isClicked = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.game)
@@ -32,7 +32,7 @@ class Game : AppCompatActivity() {
         start.setOnClickListener {
             if (!isClicked) {
                //Toast
-                Toast.makeText(this, "Choose smbd!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Choose smb!", Toast.LENGTH_SHORT).show()
             } else {
                 main.startStep()
                 isClicked = false;

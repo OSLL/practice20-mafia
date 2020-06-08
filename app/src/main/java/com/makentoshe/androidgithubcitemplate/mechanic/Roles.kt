@@ -12,7 +12,7 @@ interface Roles {
 
 class Citizen() : Roles {
     override val text: String
-        get() = "Sleep"
+        get() = "Choose smb to wish good night"
     override val role: String
         get() = "Simple"
     override fun choose(alives : ArrayList<Int>, myId : Int): Int {
@@ -22,7 +22,7 @@ class Citizen() : Roles {
 
 class Doctor() : Roles {
     override val text: String
-        get() = "Choose sbd to heal"
+        get() = "Choose smb to heal"
     override val role: String
         get() = "Doctor"
 
@@ -36,7 +36,7 @@ class Doctor() : Roles {
 
 class Mafia() : Roles {
     override val text: String
-        get() = "Choose sbd to kill"
+        get() = "Choose smb to kill"
     override val role: String
         get() = "Mafia"
     override fun choose(alives : ArrayList<Int>, myId : Int): Int {

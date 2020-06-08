@@ -53,8 +53,8 @@ class StateNight(): State() {
     override val text: String
         get() = "Night"
 
-    override fun process(PM: PlayersManager, hist: History) {
-        val nightChooses = PM.getNightEvents()
+    override fun process(pm: PlayersManager, hist: History) {
+        val nightChooses = pm.getNightEvents()
         val mafiaChoose = nightChooses[0]
         val doctorChoose = nightChooses[1]
 
@@ -62,7 +62,7 @@ class StateNight(): State() {
             hist.write("Nobody died")
         } else {
             hist.write("Player${mafiaChoose + 1} died")
-            PM.eraseId(mafiaChoose)
+            pm.eraseId(mafiaChoose)
         }
     }
 }
