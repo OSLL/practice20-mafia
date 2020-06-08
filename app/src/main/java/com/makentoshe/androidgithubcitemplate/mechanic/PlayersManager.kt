@@ -24,6 +24,7 @@ class PlayersManager(var views: Views, var hist: History) {
                 }, i, views
             )
         }
+        playersList[alives[0]].views.changeStateText(playersList[alives[0]].getText("Day"))
     }
 
     fun startStep(phase: String): Boolean {
