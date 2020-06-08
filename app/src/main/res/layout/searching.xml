@@ -31,5 +31,23 @@
         app:layout_constraintVertical_bias="0.785"
         />
 
+    <EditText
+        android:id="@+id/editText0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/player_1"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="98dp" />
+
+    <Button
+        android:id="@+id/nextBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        tools:layout_editor_absoluteX="547dp"
+        tools:layout_editor_absoluteY="99dp"
+        tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

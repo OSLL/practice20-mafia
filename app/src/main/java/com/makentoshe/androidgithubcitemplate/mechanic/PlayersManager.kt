@@ -1,12 +1,12 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
-class PlayersManager(var views: Views, var hist: History) {
+class PlayersManager(var views: Views, var hist: History, nameArray: Array<String>) {
     private var playersList: Array<Player>
     private var alives = arrayListOf<Int>(0, 1, 2, 3, 4, 5)
     private var curAlive = 0
     private var mafiaChoose = (-1).toInt()
     private var doctorChoose = (-1).toInt()
-    private var votingResults = Array<Int>(6, {0})
+    private var votingResults = Array<Int>(6) {0}
     private var lastId = -1
 
     init {
@@ -21,7 +21,7 @@ class PlayersManager(var views: Views, var hist: History) {
                     mafiaChoose -> Mafia()
                     doctorChoose -> Doctor()
                     else -> Citizen()
-                }, i, views
+                }, i, views, nameArray[i]
             )
         }
         playersList[alives[0]].views.changeStateText(playersList[alives[0]].getText("Day"))

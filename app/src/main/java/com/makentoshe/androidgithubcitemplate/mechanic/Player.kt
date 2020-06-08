@@ -1,6 +1,6 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
-class Player(val role: Roles, private val id: Int, val views: Views) {
+class Player(val role: Roles, private val id: Int, val views: Views, private val name: String) {
     fun nightAction(prevId: Int) {
         views.setBtnActive(id, prevId)
     }

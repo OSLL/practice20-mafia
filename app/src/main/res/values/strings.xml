@@ -5,4 +5,6 @@
     <string name="exit">Exit</string>
     <string name="start">Start</string>
     <string name="exit_to_main_screen">Exit to main screen</string>
+    <string name="player_1">Player 1</string>
+    <string name="next">next</string>
 </resources>

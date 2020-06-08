@@ -21,7 +21,7 @@ class Game : AppCompatActivity() {
     val arrayPm = ArrayList<PopupMenu>(6)
     lateinit var main: Main
     var isClicked = false
-
+    private val nameArray = arrayOf("1", "2", "3", "4", "5", "6")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.game)
@@ -50,7 +50,7 @@ class Game : AppCompatActivity() {
         }
 
         arrayBtn = arrayOf(button0, button1, button2, button3, button4, button5)
-        main = Main(history, arrayBtn, arrayPm, icon, state, exit, start)
+        main = Main(history, arrayBtn, arrayPm, icon, state, exit, start, nameArray)
     }
 
     private fun createPopup(btn: Button, arrPm: ArrayList<PopupMenu>) {

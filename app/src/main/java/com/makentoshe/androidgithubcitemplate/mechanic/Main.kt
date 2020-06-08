@@ -9,10 +9,11 @@ import android.widget.TextView
 class Main(var hist: TextView, private val arrayBtn: Array<Button>,
            private val arrayPm: ArrayList<PopupMenu>,
            private val icon: ImageView, private val state: TextView,
-           private val exit: Button, private val start: Button) {
+           private val exit: Button, private val start: Button,
+           private val nameArray: Array<String>) {
     private val views = Views(arrayBtn, arrayPm, icon, state, exit, start)
     private val history = History(hist)
-    private val pm = PlayersManager(views, history)
+    private val pm = PlayersManager(views, history, nameArray)
     private val sm = StateManager(pm, history)
 
     fun playerChoose(id: Int) {
