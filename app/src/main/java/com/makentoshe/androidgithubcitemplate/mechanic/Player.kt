@@ -19,4 +19,8 @@ class Player(val role: Roles, private val id: Int, val views: Views) {
     fun dayAction(prevId: Int) {
         views.setBtnActive(id, prevId)
     }
+
+    fun activeBtnAction() {
+        views.setBtnActive(id)
+    }
 }
