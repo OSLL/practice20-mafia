@@ -1,6 +1,9 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
+import android.os.Build
 import android.widget.TextView
+import androidx.annotation.RequiresApi
+import java.lang.Integer.max
 
 class StateManager(private val pm: PlayersManager, private var hist: History) {
     private var state: State = StateDay()
@@ -30,13 +33,24 @@ class StateDay() : State() {
         var playerToErase = 0
         var curCounter = -1
         var smbDie = false
+        var maxCnt = 0
 
         for (i in votingResults.indices) { //Если кол-во голосов одинаковое, то убиваем того, кто дальше от игрока
             if (votingResults[i] >= curCounter) {
                 curCounter = votingResults[i]
                 playerToErase = i
             }
-            if (votingResults[i] > 0)
+
+            if (maxCnt < votingResults[i])
+                maxCnt = votingResults[i]
+        }
+
+        if (maxCnt > 0) {
+            var eqCnt = 0
+            for (i in votingResults)
+                if (i == maxCnt)
+                    eqCnt++
+            if (eqCnt == 1)
                 smbDie = true
         }
 
