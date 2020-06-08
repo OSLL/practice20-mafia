@@ -30,13 +30,14 @@ class Game : AppCompatActivity() {
         start.setOnClickListener {
             if (!isClicked) {
                //Toast
-                Toast.makeText(this, "Choose sbd!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Choose smbd!", Toast.LENGTH_SHORT).show()
             } else {
                 main.startStep()
                 isClicked = false;
             }
         }
 
+        arrayBtn = arrayOf(button0, button1, button2, button3, button4, button5)
         main = Main(history, arrayBtn, arrayPm, icon, state)
     }
 

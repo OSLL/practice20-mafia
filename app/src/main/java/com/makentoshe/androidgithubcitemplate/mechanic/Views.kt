@@ -14,6 +14,10 @@ class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<
         arrayBtn[id].setBackgroundResource(R.drawable.circle_button_active)
     }
 
+    fun setBtnActive(id: Int) {
+        arrayBtn[id].setBackgroundResource(R.drawable.circle_button_active)
+    }
+
     fun deletePopups() {
 
     }

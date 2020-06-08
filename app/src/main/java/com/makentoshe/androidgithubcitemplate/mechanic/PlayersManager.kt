@@ -52,7 +52,8 @@ class PlayersManager(var views: Views, var hist: History) {
 
     fun changePhaseUpdateBackground(time: String) {
         val pFirst = playersList[alives[0]]
-        pFirst.dayAction(lastId)
+        if (lastId in alives) pFirst.dayAction(lastId)
+        else pFirst.activeBtnAction()
         views.changeStateText(pFirst.getText(time))
         views.setIcon(if (time == "Day") "sun" else "moon")
     }
