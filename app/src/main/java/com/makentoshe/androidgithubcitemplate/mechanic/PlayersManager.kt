@@ -47,10 +47,10 @@ class PlayersManager(var views: Views, var hist: History) {
     }
 
     fun changePhaseUpdateBackground(time: String) {
-        playersList[alives[0]].dayAction(lastId)
-        views.changeStateText(playersList[alives[0]].getText(time))
-        if (time == "Day") views.setIcon("sun")
-        else views.setIcon("moon")
+        val pFirst = playersList[alives[0]]
+        pFirst.dayAction(lastId)
+        views.changeStateText(pFirst.getText(time))
+        views.setIcon(if (time == "Day") "sun" else "moon")
     }
 
     fun playerChooseDay(id: Int) {
@@ -65,6 +65,7 @@ class PlayersManager(var views: Views, var hist: History) {
     }
 
     fun eraseId(id: Int) {
+        views.setPlayerDie(alives[id])
         alives.remove(id)
     }
 

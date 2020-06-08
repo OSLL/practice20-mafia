@@ -36,4 +36,9 @@ class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<
             "sun" -> icon.setImageResource(R.drawable.sun)
         }
     }
+
+    fun setPlayerDie(id: Int) {
+        arrayBtn[id].setBackgroundResource(R.drawable.circle_button_die)
+        arrayBtn[id].setOnClickListener(null)
+    }
 }
