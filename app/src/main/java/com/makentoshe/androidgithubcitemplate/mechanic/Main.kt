@@ -35,9 +35,11 @@ class Main(var hist: TextView, private val arrayBtn: Array<Button>,
             endChecker = pm.isEnd()
             if (endChecker == 1) {
                 history.write("Mafia wins")
+                views.changeStateText("Mafia wins")
                 start.visibility = View.GONE
             } else if (endChecker == 2) {
                 history.write("Citizen wins")
+                views.changeStateText("Citizen wins")
                 start.visibility = View.GONE
             }
         }
