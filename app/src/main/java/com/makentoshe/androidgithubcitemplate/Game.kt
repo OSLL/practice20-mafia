@@ -6,6 +6,7 @@ import android.text.method.ScrollingMovementMethod
 import android.util.Log
 import android.widget.Button
 import android.widget.PopupMenu
+import android.widget.Toast
 import kotlinx.android.synthetic.main.game.*
 
 import com.makentoshe.androidgithubcitemplate.mechanic.Main
@@ -14,14 +15,13 @@ class Game : AppCompatActivity() {
     lateinit var arrayBtn: Array<Button>
     val arrayPm = ArrayList<PopupMenu>(6)
     lateinit var main: Main
-
+    var isClicked = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.game)
         Log.d("game", "Game is here")
 
         history.movementMethod = ScrollingMovementMethod()
-
         createPopup(button0, arrayPm)
         createPopup(button1, arrayPm)
         createPopup(button2, arrayPm)
@@ -30,7 +30,13 @@ class Game : AppCompatActivity() {
         createPopup(button5, arrayPm)
 
         start.setOnClickListener {
-            main.startStep()
+            if (!isClicked) {
+               //Toast
+                Toast.makeText(this, "Choose smbd!", Toast.LENGTH_SHORT).show()
+            } else {
+                main.startStep()
+                isClicked = false;
+            }
         }
 
         arrayBtn = arrayOf(button0, button1, button2, button3, button4, button5)
@@ -50,6 +56,7 @@ class Game : AppCompatActivity() {
             when (it.itemId) {
                 R.id.menu1 -> {
                     main.playerChoose(btn.tag.toString().toInt())
+                    isClicked = true
                     true
                 }
                 else -> false
