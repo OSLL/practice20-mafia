@@ -38,7 +38,7 @@ class PlayersManager(var views: Views, var hist: History) {
 
         for (i in alives.indices)
             if (i != curAlive)
-                views.restorePopup(i)
+                views.restorePopup(alives[i])
 
         if (phase == "Day") {
             views.changeStateText(player.getText("Day"))
@@ -59,7 +59,7 @@ class PlayersManager(var views: Views, var hist: History) {
 
         for (i in alives.indices)
             if (i != curAlive)
-                views.restorePopup(i)
+                views.restorePopup(alives[i])
     }
 
     fun playerChooseDay(id: Int) {
