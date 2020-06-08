@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item>
-        <shape android:shape="oval">
-            <solid android:color="#FCD366"/>
-        </shape>
-    </item>
+    <item android:drawable="@drawable/megumin"
+        android:left="@dimen/btn_size"
+        android:top="@dimen/btn_size"
+        />
 </selector>
