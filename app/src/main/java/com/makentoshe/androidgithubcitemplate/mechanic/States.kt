@@ -8,23 +8,9 @@ class StateManager(private val pm: PlayersManager, private var hist: History) {
     fun changePhase() {
         if (this.getState() == "Day") this.state = StateNight()
         else this.state = StateDay()
+        if (this.getState() == "Day") hist.write("City is wake up")
+        else hist.write("City is falling asleep")
     }
-
-    /*fun phase(): Boolean {
-        val whatNext = pm.isEnd()
-
-        if (whatNext == 0) {
-            if (timesOfDay) changeGameState(StateDay())
-            else changeGameState(StateNight())
-            timesOfDay = !timesOfDay
-            state.process(pm, hist)
-            return true
-        }
-
-        if (whatNext == 1) hist.write("Mafia wins")
-        else hist.write("Peaces wins")
-        return false
-    }*/
 
     fun getState(): String = state.text
     fun process() {
@@ -34,7 +20,7 @@ class StateManager(private val pm: PlayersManager, private var hist: History) {
 
 abstract class State {
     abstract val text: String
-    abstract fun process(PM: PlayersManager, hist: History)
+    abstract fun process(pm: PlayersManager, hist: History)
 }
 
 class StateDay() : State() {
@@ -46,8 +32,6 @@ class StateDay() : State() {
         var playerToErase = 0
         var curCounter = -1
         var smbDie = false
-
-        hist.write("City is wake up")
 
         for (i in votingResults.indices) { //Если кол-во голосов одинаковое, то убиваем того, кто дальше от игрока
             if (votingResults[i] >= curCounter) {
@@ -75,8 +59,6 @@ class StateNight(): State() {
         val nightChooses = PM.getNightEvents()
         val mafiaChoose = nightChooses[0]
         val doctorChoose = nightChooses[1]
-
-        hist.write("City is falling asleep")
 
         if (mafiaChoose == doctorChoose) {
             hist.write("Nobody died")
