@@ -1,5 +1,6 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.PopupMenu
@@ -7,7 +8,7 @@ import android.widget.TextView
 import com.makentoshe.androidgithubcitemplate.R
 
 class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<PopupMenu>,
-            private val icon: ImageView, private val state: TextView) {
+            private val icon: ImageView, private val state: TextView, private val exit: Button) {
     fun setBtnActive(id : Int, prevId: Int)
     {
         arrayBtn[prevId].setBackgroundResource(R.drawable.circle_button)
@@ -48,5 +49,9 @@ class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<
     fun setPlayerDie(id: Int) {
         arrayBtn[id].setBackgroundResource(R.drawable.circle_button_die)
         arrayBtn[id].setOnClickListener(null)
+    }
+
+    fun showExit() {
+        exit.visibility = View.VISIBLE
     }
 }

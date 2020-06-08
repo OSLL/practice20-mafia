@@ -7,8 +7,8 @@ import android.widget.TextView
 
 class Main(var hist: TextView, private val arrayBtn: Array<Button>,
            private val arrayPm: ArrayList<PopupMenu>,
-           private val icon: ImageView, private val state: TextView) {
-    private val views = Views(arrayBtn, arrayPm, icon, state)
+           private val icon: ImageView, private val state: TextView, private val exit: Button) {
+    private val views = Views(arrayBtn, arrayPm, icon, state, exit)
     private val history = History(hist)
     private val pm = PlayersManager(views, history)
     private val sm = StateManager(pm, history)
@@ -32,10 +32,14 @@ class Main(var hist: TextView, private val arrayBtn: Array<Button>,
             pm.changePhaseUpdateBackground(sm.getState())
 
             endChecker = pm.isEnd()
-            if (endChecker == 1)
+            if (endChecker == 1) {
                 history.write("Mafia wins")
-            else if (endChecker == 2)
+                views.showExit()
+            }
+            else if (endChecker == 2) {
                 history.write("Citizen wins")
+                views.showExit()
+            }
         }
     }
 }
