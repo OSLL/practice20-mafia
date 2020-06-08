@@ -23,12 +23,15 @@
 
         <activity android:name=".Searching"
             android:label="searching"
-            tools:ignore="WrongManifestParent">
+
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity">
         </activity>
 
         <activity android:name=".Game"
             android:label="game"
-            tools:ignore="WrongManifestParent">
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity">
         </activity>
     </application>
 </manifest>
