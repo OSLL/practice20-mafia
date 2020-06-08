@@ -45,6 +45,7 @@ class StateDay() : State() {
         val votingResults = pm.getVotingResults()
         var playerToErase = 0
         var curCounter = -1
+        var smbDie = false
 
         hist.write("City is wake up")
 
@@ -53,10 +54,16 @@ class StateDay() : State() {
                 curCounter = votingResults[i]
                 playerToErase = i
             }
+            if (votingResults[i] > 0)
+                smbDie = true
         }
 
-        hist.write("Player${playerToErase + 1} die today")
-        pm.eraseId(playerToErase)
+        if (smbDie) {
+            hist.write("Player${playerToErase + 1} die today")
+            pm.eraseId(playerToErase)
+        }
+        else
+            hist.write("Nobody die")
     }
 }
 

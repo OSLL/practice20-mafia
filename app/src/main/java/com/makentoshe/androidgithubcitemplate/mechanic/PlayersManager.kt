@@ -36,19 +36,20 @@ class PlayersManager(var views: Views, var hist: History) {
         }
 
         if (phase == "Day") {
-            views.changeStateText(player.getVoteText())
+            views.changeStateText(player.getText("Day"))
             player.dayAction(alives[(curAlive + alives.size - 1) % alives.size])
         } else {
-            views.changeStateText(playersList[alives[curAlive]].getRoleText())
+            views.changeStateText(playersList[alives[curAlive]].getText("Night"))
             player.nightAction(alives[(curAlive + alives.size - 1) % alives.size])
         }
         return true
     }
 
-    fun changePhaseUpdateBackground() {
+    fun changePhaseUpdateBackground(time: String) {
         playersList[alives[0]].dayAction(lastId)
-        views.changeStateText(playersList[alives[0]].getVoteText())
-        views.setIcon("moon")
+        views.changeStateText(playersList[alives[0]].getText(time))
+        if (time == "Day") views.setIcon("sun")
+        else views.setIcon("moon")
     }
 
     fun playerChooseDay(id: Int) {

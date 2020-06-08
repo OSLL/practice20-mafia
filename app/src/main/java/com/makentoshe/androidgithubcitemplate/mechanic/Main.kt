@@ -25,7 +25,7 @@ class Main(var hist: TextView, private val arrayBtn: Array<Button>,
         if (!res) {
             sm.process()
             sm.changePhase()
-            pm.changePhaseUpdateBackground()
+            pm.changePhaseUpdateBackground(sm.getState())
 
             endChecker = pm.isEnd()
             if (endChecker == 1)

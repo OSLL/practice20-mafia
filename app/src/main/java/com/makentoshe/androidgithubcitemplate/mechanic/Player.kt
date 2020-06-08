@@ -13,9 +13,7 @@ class Player(val role: Roles, private val id: Int, val views: Views) {
         return role.text
     }
 
-    fun getVoteText() : String {
-        return role.voteText
-    }
+    fun getText(time: String) : String = if (time == "Day") role.voteText else role.text
 
     fun dayAction(prevId: Int) {
         views.setBtnActive(id, prevId)
