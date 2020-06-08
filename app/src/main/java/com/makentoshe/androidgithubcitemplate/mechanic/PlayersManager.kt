@@ -52,10 +52,17 @@ class PlayersManager(var views: Views, var hist: History) {
 
     fun changePhaseUpdateBackground(time: String) {
         val pFirst = playersList[alives[0]]
+
         if (lastId in alives) pFirst.dayAction(lastId)
         else pFirst.activeBtnAction()
+
         views.changeStateText(pFirst.getText(time))
         views.setIcon(if (time == "Day") "sun" else "moon")
+        if (time == "Day")
+            for (alive in alives)
+                views.cntInit(alive)
+        else views.cntsDel()
+
 
         for (i in alives.indices)
             if (i != curAlive)
@@ -64,6 +71,7 @@ class PlayersManager(var views: Views, var hist: History) {
 
     fun playerChooseDay(id: Int) {
         votingResults[id]++
+        views.cntIncrement(id)
     }
 
     fun playerChooseNight(id: Int) {
