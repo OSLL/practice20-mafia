@@ -9,21 +9,22 @@ import kotlinx.android.synthetic.main.searching.*
 import kotlin.concurrent.thread
 
 class Searching : AppCompatActivity() {
-
+    //private var nameArray = Array<String>(6){""}
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.searching)
         Log.d("search", "Intent to game!")
 
-        /*thread {
-            Thread.sleep(3000)
-            var myIntent = Intent(this, Game::class.java)
-            finish()
-            startActivity(myIntent)
-        }*/
-
         nextBtn.setOnClickListener {
-            var myIntent = Intent(this, Game::class.java)
+            val myIntent = Intent(this, Game::class.java)
+
+            myIntent.putExtra("0", editText0.text.toString())
+            myIntent.putExtra("1", editText1.text.toString())
+            myIntent.putExtra("2", editText2.text.toString())
+            myIntent.putExtra("3", editText3.text.toString())
+            myIntent.putExtra("4", editText4.text.toString())
+            myIntent.putExtra("5", editText5.text.toString())
+
             finish()
             startActivity(myIntent)
         }

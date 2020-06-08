@@ -5,6 +5,12 @@
     <string name="exit">Exit</string>
     <string name="start">Start</string>
     <string name="exit_to_main_screen">Exit to main screen</string>
-    <string name="player_1">Player 1</string>
     <string name="next">next</string>
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+    <string name="player_3">Player 3</string>
+    <string name="player_4">Player 4</string>
+    <string name="player_5">Player 5</string>
+    <string name="player_6">Player 6</string>
+    <string name="enter_nicknames_for_players">Enter nicknames for players</string>
 </resources>
