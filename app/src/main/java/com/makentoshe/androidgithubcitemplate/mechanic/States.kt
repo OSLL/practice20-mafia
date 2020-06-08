@@ -56,7 +56,8 @@ class StateDay() : State() {
 
         if (smbDie) {
             hist.write("Player${playerToErase + 1} die today")
-            pm.eraseId(playerToErase)
+            if (playerToErase > 0)
+              pm.eraseId(playerToErase)
         }
         else
             hist.write("Nobody die")
@@ -76,7 +77,8 @@ class StateNight(): State() {
             hist.write("Nobody died")
         } else {
             hist.write("Player${mafiaChoose + 1} died")
-            pm.eraseId(mafiaChoose)
+            if (mafiaChoose > 0)
+                pm.eraseId(mafiaChoose)
         }
     }
 }

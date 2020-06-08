@@ -4,8 +4,8 @@ class PlayersManager(var views: Views, var hist: History) {
     private var playersList: Array<Player>
     private var alives = arrayListOf<Int>(0, 1, 2, 3, 4, 5)
     private var curAlive = 0
-    private var mafiaChoose = (-1e9).toInt()
-    private var doctorChoose = (-1e9).toInt()
+    private var mafiaChoose = (-1).toInt()
+    private var doctorChoose = (-1).toInt()
     private var votingResults = Array<Int>(6, {0})
     private var lastId = -1
 
