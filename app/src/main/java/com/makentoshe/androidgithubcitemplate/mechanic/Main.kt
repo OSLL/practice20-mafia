@@ -1,12 +1,13 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
 
 class Main(var hist: TextView, private val arrayBtn: Array<Button>,
            private val arrayPm: ArrayList<PopupMenu>,
-           private val icon: TextView, private val state: TextView) {
+           private val icon: ImageView, private val state: TextView) {
     private val views = Views(arrayBtn, arrayPm, icon, state)
     private val history = History(hist)
     private val pm = PlayersManager(views, history)
@@ -18,7 +19,7 @@ class Main(var hist: TextView, private val arrayBtn: Array<Button>,
     }
 
     fun startStep() {
-        val res = if (sm.getState() == "Day") pm.startStepDay() else pm.startStepNight()
+        val res = if (sm.getState() == "Day") pm.startStep("Day") else pm.startStep("Night")
         var endChecker: Int
 
         if (!res) {

@@ -1,12 +1,12 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
-class PlayersManager(views: Views, hist: History) {
+class PlayersManager(var views: Views, var hist: History) {
     private var playersList: Array<Player>
     private var alives = arrayListOf<Int>(0, 1, 2, 3, 4, 5)
     private var curAlive = 0
     private var mafiaChoose = (-1e9).toInt()
     private var doctorChoose = (-1e9).toInt()
-    private var votingResults: Array<Int>
+    private var votingResults = Array<Int>(6, {0})
     private var lastId = -1
 
     init {
@@ -24,36 +24,31 @@ class PlayersManager(views: Views, hist: History) {
                 }, i, views
             )
         }
-        votingResults = arrayOf(0, 0, 0, 0, 0, 0)
     }
 
-    fun startStepDay(): Boolean {
+    fun startStep(phase: String): Boolean {
         curAlive = (curAlive + 1) % alives.size
+        var player = playersList[alives[curAlive]]
 
         if (curAlive == 0) {
             lastId = alives[alives.size - 1]
             return false
         }
-        playersList[alives[curAlive]].views.changeStateText(playersList[alives[curAlive]].getVoteText())
-        playersList[alives[curAlive]].dayAction(alives[(curAlive + alives.size - 1) % alives.size])
-        return true
-    }
 
-    fun startStepNight(): Boolean {
-        curAlive = (curAlive + 1) % alives.size
-
-        if (curAlive == 0) {
-            lastId = alives[alives.size - 1]
-            return false
+        if (phase == "Day") {
+            views.changeStateText(player.getVoteText())
+            player.dayAction(alives[(curAlive + alives.size - 1) % alives.size])
+        } else {
+            views.changeStateText(playersList[alives[curAlive]].getRoleText())
+            player.nightAction(alives[(curAlive + alives.size - 1) % alives.size])
         }
-        playersList[alives[curAlive]].views.changeStateText(playersList[alives[curAlive]].getRoleText())
-        playersList[alives[curAlive]].nightAction(alives[(curAlive + alives.size - 1) % alives.size])
         return true
     }
 
     fun changePhaseUpdateBackground() {
         playersList[alives[0]].dayAction(lastId)
-        playersList[alives[0]].views.changeStateText(playersList[alives[0]].getVoteText())
+        views.changeStateText(playersList[alives[0]].getVoteText())
+        views.setIcon("moon")
     }
 
     fun playerChooseDay(id: Int) {

@@ -39,9 +39,10 @@
         app:layout_constraintWidth_percent="@dimen/right_width"
         tools:context=".MainActivity">
 
-        <TextView
+        <ImageView
             android:id="@+id/icon"
-            android:layout_width="wrap_content"
+            android:src="@drawable/sun"
+            android:layout_width="15dp"
             android:layout_height="match_parent"
             android:layout_weight="0.1"
             android:gravity="center"

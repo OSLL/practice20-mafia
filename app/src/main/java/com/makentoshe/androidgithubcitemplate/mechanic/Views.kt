@@ -1,12 +1,13 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
 import com.makentoshe.androidgithubcitemplate.R
 
 class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<PopupMenu>,
-            private val icon: TextView, private val state: TextView) {
+            private val icon: ImageView, private val state: TextView) {
     fun setBtnActive(id : Int, prevId: Int)
     {
         arrayBtn[prevId].setBackgroundResource(R.drawable.circle_button)
@@ -27,5 +28,12 @@ class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<
 
     fun changeStateText (text: String) {
         state.text = text
+    }
+
+    fun setIcon(name: String) {
+        when (name) {
+            "moon" -> icon.setImageResource(R.drawable.moon)
+            "sun" -> icon.setImageResource(R.drawable.sun)
+        }
     }
 }

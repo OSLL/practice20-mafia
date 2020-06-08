@@ -40,8 +40,9 @@ abstract class State {
 class StateDay() : State() {
     override val text: String
         get() = "Day"
-    override fun process(PM: PlayersManager, hist: History) {
-        val votingResults = PM.getVotingResults()
+
+    override fun process(pm: PlayersManager, hist: History) {
+        val votingResults = pm.getVotingResults()
         var playerToErase = 0
         var curCounter = -1
 
@@ -55,13 +56,14 @@ class StateDay() : State() {
         }
 
         hist.write("Player${playerToErase + 1} die today")
-        PM.eraseId(playerToErase)
+        pm.eraseId(playerToErase)
     }
 }
 
 class StateNight(): State() {
     override val text: String
         get() = "Night"
+
     override fun process(PM: PlayersManager, hist: History) {
         val nightChooses = PM.getNightEvents()
         val mafiaChoose = nightChooses[0]
