@@ -36,6 +36,10 @@ class PlayersManager(var views: Views, var hist: History) {
             return false
         }
 
+        for (i in alives.indices)
+            if (i != curAlive)
+                views.restorePopup(i)
+
         if (phase == "Day") {
             views.changeStateText(player.getText("Day"))
             player.dayAction(alives[(curAlive + alives.size - 1) % alives.size])

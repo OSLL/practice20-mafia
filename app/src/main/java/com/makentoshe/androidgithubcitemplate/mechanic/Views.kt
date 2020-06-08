@@ -26,6 +26,10 @@ class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<
 
     }
 
+    fun restorePopup(id: Int) {
+        arrayBtn[id].setOnClickListener {arrayPm[id].show()}
+    }
+
     fun changeStateText (text: String) {
         state.text = text
     }

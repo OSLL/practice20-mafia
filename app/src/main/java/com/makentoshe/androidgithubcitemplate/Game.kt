@@ -22,30 +22,27 @@ class Game : AppCompatActivity() {
         Log.d("game", "Game is here")
 
         history.movementMethod = ScrollingMovementMethod()
-        createPopup(button0, arrayPm)
-        createPopup(button1, arrayPm)
-        createPopup(button2, arrayPm)
-        createPopup(button3, arrayPm)
-        createPopup(button4, arrayPm)
-        createPopup(button5, arrayPm)
+        arrayBtn = arrayOf(button0, button1, button2, button3, button4, button5)
+
+        for (btn in arrayBtn)
+            createPopup(btn, arrayPm)
 
         start.setOnClickListener {
             if (!isClicked) {
                //Toast
-                Toast.makeText(this, "Choose smbd!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Choose sbd!", Toast.LENGTH_SHORT).show()
             } else {
                 main.startStep()
                 isClicked = false;
             }
         }
 
-        arrayBtn = arrayOf(button0, button1, button2, button3, button4, button5)
         main = Main(history, arrayBtn, arrayPm, icon, state)
     }
 
     private fun createPopup(btn: Button, arrPm: ArrayList<PopupMenu>) {
         val popupMenu = PopupMenu(this, btn)
-        arrPm.plus(popupMenu)
+        arrPm.add(popupMenu)
         popupMenu.inflate(R.menu.choose)
 
         btn.setOnClickListener {
@@ -56,11 +53,17 @@ class Game : AppCompatActivity() {
             when (it.itemId) {
                 R.id.menu1 -> {
                     main.playerChoose(btn.tag.toString().toInt())
+                    blockPopups()
                     isClicked = true
                     true
                 }
                 else -> false
             }
         }
+    }
+
+    private fun blockPopups() {
+        for (btn in arrayBtn)
+            btn.setOnClickListener(null)
     }
 }
