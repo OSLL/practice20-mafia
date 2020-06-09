@@ -19,10 +19,11 @@ import com.makentoshe.androidgithubcitemplate.mechanic.Main
 @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class Game : AppCompatActivity() {
     lateinit var arrayBtn: Array<Button>
-    val arrayPm = ArrayList<PopupMenu>(6)
+    private val arrayPm = ArrayList<PopupMenu>(6)
     private var nameArray = Array<String>(6){""}
     lateinit var main: Main
     var isClicked = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.game)
@@ -33,8 +34,6 @@ class Game : AppCompatActivity() {
 
         for (btn in arrayBtn)
             createPopup(btn, arrayPm)
-
-        intent = getIntent()
 
         nameArray[0] = intent.getStringExtra("0").toString()
         nameArray[1] = intent.getStringExtra("1").toString()
@@ -52,7 +51,6 @@ class Game : AppCompatActivity() {
             }
         }
 
-        exit.setBackgroundResource(R.drawable.exit)
         exit.setOnClickListener {
             var myIntent = Intent(this, MainActivity::class.java)
             finish()
@@ -60,7 +58,7 @@ class Game : AppCompatActivity() {
         }
 
         arrayBtn = arrayOf(button0, button1, button2, button3, button4, button5)
-        main = Main(history, arrayBtn, arrayPm, icon, state, exit, start, nameArray)
+        main = Main(history, arrayBtn, arrayPm, this.icon, this.state, this.exit, this.start, nameArray)
     }
 
     private fun createPopup(btn: Button, arrPm: ArrayList<PopupMenu>) {
