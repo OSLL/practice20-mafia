@@ -15,7 +15,7 @@
         android:text="История"
         android:textSize="20dp"
         android:gravity="center"
-        android:background="@color/Capuccino"
+        android:background="@color/cappuccino"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="RtlSymmetry"
@@ -38,17 +38,16 @@
         app:layout_constraintStart_toEndOf="@+id/history_head"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="@dimen/right_width"
+        android:background="@color/cappuccino"
         tools:context=".MainActivity">
 
         <ImageView
             android:id="@+id/icon"
-            android:src="@drawable/sun"
-            android:background="@color/Capuccino"
+            android:background="@drawable/sun"
             android:layout_width="15dp"
             android:layout_height="match_parent"
             android:layout_weight="0.1"
-            android:gravity="center"
-            android:text="icon" />
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/state"
@@ -56,7 +55,6 @@
             android:layout_height="match_parent"
             android:layout_weight="0.8"
             android:gravity="center"
-            android:background="@color/Capuccino"
             android:text="Состояние" />
 
         <Button
@@ -66,7 +64,7 @@
             android:layout_weight="0.1"
             android:gravity="center"
             android:text="Start"
-            android:background="@color/Capuccino"
+            android:background="@color/cappuccino"
             android:textSize="12sp"/>
     </LinearLayout>
 
@@ -93,8 +91,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/history"
-            android:scrollbars="vertical"
-            />
+            android:scrollbars="vertical" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
