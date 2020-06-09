@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidGithubCiTemplate</string>
+    <string name="app_name">Mafia</string>
     <string name="searching_game">Searching game…</string>
     <string name="start_game">Start game</string>
     <string name="exit">Exit</string>
