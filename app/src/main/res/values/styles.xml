@@ -38,4 +38,9 @@
         <item name="android:shadowRadius">2</item>
         <item name="android:text">0</item>
     </style>
+
+    <style name="EditText">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/br_white</item>
+    </style>
 </resources>
