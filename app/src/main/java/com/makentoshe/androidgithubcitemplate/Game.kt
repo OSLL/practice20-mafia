@@ -16,12 +16,13 @@ import kotlinx.android.synthetic.main.game.*
 
 import com.makentoshe.androidgithubcitemplate.mechanic.Main
 
+@Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class Game : AppCompatActivity() {
     lateinit var arrayBtn: Array<Button>
     val arrayPm = ArrayList<PopupMenu>(6)
+    private var nameArray = Array<String>(6){""}
     lateinit var main: Main
     var isClicked = false
-    private val nameArray = arrayOf("1", "2", "3", "4", "5", "6")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.game)
@@ -32,6 +33,15 @@ class Game : AppCompatActivity() {
 
         for (btn in arrayBtn)
             createPopup(btn, arrayPm)
+
+        intent = getIntent()
+
+        nameArray[0] = intent.getStringExtra("0").toString()
+        nameArray[1] = intent.getStringExtra("1").toString()
+        nameArray[2] = intent.getStringExtra("2").toString()
+        nameArray[3] = intent.getStringExtra("3").toString()
+        nameArray[4] = intent.getStringExtra("4").toString()
+        nameArray[5] = intent.getStringExtra("5").toString()
 
         start.setOnClickListener {
             if (!isClicked) {

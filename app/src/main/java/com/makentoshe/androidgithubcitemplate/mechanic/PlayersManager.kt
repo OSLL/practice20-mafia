@@ -104,6 +104,10 @@ class PlayersManager(var views: Views, var hist: History, nameArray: Array<Strin
         return resCopy
     }
 
+    fun getPlayer(id: Int) : Player {
+        return playersList[id]
+    }
+
     fun isEnd(): Int {
         var mafiaAlive = false
         var citizenAlive = false
