@@ -23,6 +23,6 @@
     </style>
 
     <style name="Background">
-        <item name="android:background">#d67b3a</item>
+        <item name="android:background">#FF1836</item>
     </style>
 </resources>
