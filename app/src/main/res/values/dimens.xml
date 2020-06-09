@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="radius">92dp</dimen>
-    <dimen name="table_radius">264dp</dimen>
+    <dimen name="table_radius">256dp</dimen>
     <dimen name="btn_size">60dp</dimen>
     <dimen name="top_height">0.08</dimen>
     <dimen name="bottom_height">0.92</dimen>

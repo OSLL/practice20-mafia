@@ -108,7 +108,7 @@
             android:id="@+id/table"
             android:layout_width="@dimen/table_radius"
             android:layout_height="@dimen/table_radius"
-            android:background="@drawable/circle_table"
+            android:background="@drawable/wood_table"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.501"
