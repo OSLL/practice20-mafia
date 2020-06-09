@@ -71,6 +71,7 @@ class PlayersManager(var views: Views, var hist: History, nameArray: Array<Strin
 
     fun playerChooseDay(id: Int) {
         votingResults[id]++
+        hist.write("${playersList[alives[curAlive]].getName()} voted for ${playersList[id].getName()}")
         views.cntIncrement(id)
     }
 
