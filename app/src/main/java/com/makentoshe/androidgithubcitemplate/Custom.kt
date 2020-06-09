@@ -4,15 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.searching.*
-import kotlin.concurrent.thread
+import kotlinx.android.synthetic.main.custom.*
 
-class Searching : AppCompatActivity() {
+class Custom : AppCompatActivity() {
     //private var nameArray = Array<String>(6){""}
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.searching)
+        setContentView(R.layout.custom)
         Log.d("search", "Intent to game!")
 
         nextBtn.setOnClickListener {

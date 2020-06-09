@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         join.setOnClickListener {
             Log.d("main", "Intent to search!")
-            var myIntent = Intent(this, Searching::class.java)
+            var myIntent = Intent(this, Custom::class.java)
             finish()
             startActivity(myIntent)
         }

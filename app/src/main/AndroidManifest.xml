@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Searching"
+        <activity android:name=".Custom"
             android:label="searching"
 
             android:screenOrientation="landscape"
