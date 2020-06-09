@@ -13,14 +13,16 @@
         <item name="windowActionBar">false</item>
     </style>
 
+
+
     <style name="RoundedCustomButton" parent="@style/Widget.AppCompat.Button.Colored">
         <item name="android:background">@drawable/custom_btn</item>
         <item name="android:colorButtonNormal">#1a237e</item>
         <item name="android:colorControlHighlight">#673ab7</item>
-        <item name="android:textColor">#AAA</item>
+        <item name="android:textColor">#fff</item>
     </style>
 
     <style name="Background">
-        <item name="android:background">@android:color/darker_gray</item>
+        <item name="android:background">#FF1836</item>
     </style>
 </resources>
