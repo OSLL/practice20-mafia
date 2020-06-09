@@ -11,11 +11,11 @@ class StateManager(private val pm: PlayersManager, private var hist: History) {
     fun changePhase() {
         if (this.getState() == "Day") {
             this.state = StateNight()
-            hist.write("City is wake up")
+            hist.write("City is falling asleep")
         }
         else {
             this.state = StateDay()
-            hist.write("City is falling asleep")
+            hist.write("City is wake up")
         }
     }
 
