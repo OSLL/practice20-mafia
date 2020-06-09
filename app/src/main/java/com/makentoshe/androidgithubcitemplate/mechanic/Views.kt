@@ -13,7 +13,7 @@ class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<
             private val exit: Button, private val start: Button) {
     var skinUsual = arrayOf(R.drawable.circle_button0, R.drawable.circle_button1, R.drawable.circle_button2, R.drawable.circle_button3, R.drawable.circle_button4, R.drawable.circle_button5)
     var skinActive = arrayOf(R.drawable.circle_button_active0, R.drawable.circle_button_active1, R.drawable.circle_button_active2, R.drawable.circle_button_active3, R.drawable.circle_button_active4, R.drawable.circle_button_active5)
-    var skinDie = arrayOf(R.drawable.circle_button_die0, R.drawable.circle_button_die1, R.drawable.circle_button_die2, R.drawable.circle_button_die3, R.drawable.circle_button_die4, R.drawable.circle_button_die5)
+
     fun setBtnActive(id : Int, prevId: Int)
     {
         arrayBtn[prevId].setBackgroundResource(skinUsual[prevId])
@@ -52,7 +52,7 @@ class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<
     }
 
     fun setPlayerDie(id: Int) {
-        arrayBtn[id].setBackgroundResource(skinDie[id])
+        arrayBtn[id].setBackgroundResource(R.drawable.circle_button_die)
         arrayBtn[id].setOnClickListener(null)
     }
 

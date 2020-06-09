@@ -9,10 +9,14 @@ class StateManager(private val pm: PlayersManager, private var hist: History) {
     private var state: State = StateDay()
 
     fun changePhase() {
-        if (this.getState() == "Day") this.state = StateNight()
-        else this.state = StateDay()
-        if (this.getState() == "Day") hist.write("City is wake up")
-        else hist.write("City is falling asleep")
+        if (this.getState() == "Day") {
+            this.state = StateNight()
+            hist.write("City is wake up")
+        }
+        else {
+            this.state = StateDay()
+            hist.write("City is falling asleep")
+        }
     }
 
     fun getState(): String = state.text
@@ -35,7 +39,7 @@ class StateDay() : State() {
         var smbDie = false
         var maxCnt = 0
 
-        for (i in votingResults.indices) { //Если кол-во голосов одинаковое, то убиваем того, кто дальше от игрока
+        for (i in votingResults.indices) {
             if (votingResults[i] >= curCounter) {
                 curCounter = votingResults[i]
                 playerToErase = i
@@ -55,7 +59,7 @@ class StateDay() : State() {
         }
 
         if (smbDie) {
-            hist.write("Player${playerToErase + 1} die today")
+            hist.write("${pm.getPlayer(playerToErase).getName()} die today")
             if (playerToErase >= 0)
               pm.eraseId(playerToErase)
         }
@@ -76,7 +80,7 @@ class StateNight(): State() {
         if (mafiaChoose == doctorChoose) {
             hist.write("Nobody died")
         } else {
-            hist.write("Player${mafiaChoose + 1} died")
+            hist.write("${pm.getPlayer(mafiaChoose).getName()} died")
             if (mafiaChoose >= 0)
                 pm.eraseId(mafiaChoose)
         }
