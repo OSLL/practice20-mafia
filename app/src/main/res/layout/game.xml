@@ -39,7 +39,7 @@
         app:layout_constraintStart_toEndOf="@+id/history_head"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="@dimen/right_width"
-        android:background="@color/cappuccino"
+        android:background="@drawable/wood"
         tools:context=".MainActivity">
 
         <ImageView
