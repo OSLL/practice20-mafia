@@ -13,7 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="История"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:gravity="center"
         android:background="@color/cappuccino"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,15 +43,16 @@
 
         <ImageView
             android:id="@+id/icon"
-            android:background="@drawable/sun"
-            android:layout_width="15dp"
+            android:src="@drawable/sun"
+            android:background="@color/br_white"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_weight="0.1"
             android:gravity="center" />
 
         <TextView
             android:id="@+id/state"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.8"
             android:gravity="center"
@@ -59,12 +60,14 @@
 
         <Button
             android:id="@+id/start"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
             android:layout_weight="0.1"
             android:gravity="center"
+            android:paddingStart="1dp"
             android:text="Start"
-            android:background="@color/cappuccino"
+            android:textColor="@color/br_white"
+            android:background="@color/red_black"
             android:textSize="12sp"/>
     </LinearLayout>
 
@@ -99,13 +102,13 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_weight="0.7"
-        android:orientation="horizontal"
         android:background="@drawable/pub"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:context=".MainActivity"
+        app:layout_constraintHeight_percent="@dimen/bottom_height"
         app:layout_constraintWidth_percent="@dimen/right_width"
-        app:layout_constraintHeight_percent="@dimen/bottom_height">>
+        tools:context=".MainActivity">>
 
 
         <View
@@ -195,7 +198,7 @@
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:visibility="invisible"
-            android:src="@drawable/exit"
+            android:background="@drawable/exit"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"

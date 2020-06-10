@@ -2,10 +2,7 @@ package com.makentoshe.androidgithubcitemplate.mechanic
 
 import android.view.View
 import android.annotation.SuppressLint
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.PopupMenu
-import android.widget.TextView
+import android.widget.*
 import com.makentoshe.androidgithubcitemplate.R
 
 class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<PopupMenu>,
