@@ -35,9 +35,11 @@ class Main(var hist: TextView, private val arrayBtn: Array<Button>,
             if (endChecker == 1) {
                 history.write("Mafia wins")
                 views.showExit()
+                views.blockPopups()
             } else if (endChecker == 2) {
                 history.write("Citizen wins")
                 views.showExit()
+                views.blockPopups()
             }
         }
     }

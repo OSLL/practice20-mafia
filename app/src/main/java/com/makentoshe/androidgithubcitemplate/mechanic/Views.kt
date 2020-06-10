@@ -21,9 +21,12 @@ class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<
         arrayBtn[id].setBackgroundResource(skinActive[id])
     }
 
-    fun blockPopups() {
 
+    fun blockPopups() {
+        for (btn in arrayBtn)
+            btn.setOnClickListener(null)
     }
+
 
     fun setPopupInactive() {
 
