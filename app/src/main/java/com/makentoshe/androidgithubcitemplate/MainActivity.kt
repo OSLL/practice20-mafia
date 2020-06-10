@@ -1,16 +1,27 @@
 package com.makentoshe.androidgithubcitemplate
 
+import android.app.Dialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.Collections.copy
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val dialog = Dialog(this);
+
+        dialog.setTitle("Заголовок диалога");
+        /* Передайте ссылку на разметку
+        dialog.setContentView(R.layout.dialog_view);
+        // Найдите элемент TextView внутри вашей разметки
+        // и установите ему соответствующий текст
+        TextView text = (TextView) dialog.findViewById(R.id.dialogTextView);
+        text.setText("Текст в диалоговом окне. Вы любите котов?");*/
 
         join.setOnClickListener {
             Log.d("main", "Intent to search!")
@@ -22,6 +33,10 @@ class MainActivity : AppCompatActivity() {
         exit.setOnClickListener {
             Log.d("main", "Intent to exit")
             finish()
+        }
+
+        instruction.setOnClickListener {
+            dialog.show()
         }
     }
 }

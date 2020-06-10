@@ -36,16 +36,20 @@ class PlayersManager(var views: Views, var hist: History, nameArray: Array<Strin
             return false
         }
 
-        for (i in alives.indices)
-            if (i != curAlive)
-                views.restorePopup(alives[i])
-
         if (phase == "Day") {
             views.changeStateText(player.getText("Day"))
             player.dayAction(alives[(curAlive + alives.size - 1) % alives.size])
+            for (i in alives.indices)
+                if (i != curAlive)
+                    views.restorePopup(alives[i])
         } else {
             views.changeStateText(playersList[alives[curAlive]].getText("Night"))
             player.nightAction(alives[(curAlive + alives.size - 1) % alives.size])
+            for (i in alives.indices)
+                if (i != curAlive)
+                    views.restorePopup(alives[i])
+                else if (playersList[alives[i]].isSelfChoose())
+                    views.restorePopup(alives[i])
         }
         return true
     }
