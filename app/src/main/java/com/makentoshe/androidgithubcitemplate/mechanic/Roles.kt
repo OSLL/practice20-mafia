@@ -7,8 +7,8 @@ interface Roles {
         get() = this.toString()
     val voteText: String
         get() = "Vote now"
-    val selfChoose: Boolean
-        get() = false
+
+    fun isSelfChoose(): Boolean = false
 
     fun choose(alives : ArrayList<Int>, myId : Int) : Int
 }
@@ -29,8 +29,15 @@ class Doctor() : Roles {
         get() = "Choose smb to heal"
     override val role: String
         get() = "Doctor"
-    override val selfChoose: Boolean
-        get() = true
+    var selfHealCnt = 0
+
+    override fun isSelfChoose(): Boolean {
+        if (selfHealCnt == 0) {
+            selfHealCnt++
+            return true
+        }
+        return false
+    }
 
     override fun choose(alives : ArrayList<Int>, myId : Int): Int {
         val left = 0
