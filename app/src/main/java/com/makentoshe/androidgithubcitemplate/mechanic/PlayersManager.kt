@@ -71,6 +71,8 @@ class PlayersManager(var views: Views, var hist: History, nameArray: Array<Strin
         for (i in alives.indices)
             if (i != curAlive)
                 views.restorePopup(alives[i])
+            else if (playersList[alives[i]].isSelfChoose() && time == "Day")
+                views.restorePopup(alives[i])
     }
 
     fun playerChooseDay(id: Int) {
