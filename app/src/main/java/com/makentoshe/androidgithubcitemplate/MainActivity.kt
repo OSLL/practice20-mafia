@@ -15,13 +15,8 @@ class MainActivity : AppCompatActivity() {
 
         val dialog = Dialog(this);
 
-        dialog.setTitle("Заголовок диалога");
-        /* Передайте ссылку на разметку
-        dialog.setContentView(R.layout.dialog_view);
-        // Найдите элемент TextView внутри вашей разметки
-        // и установите ему соответствующий текст
-        TextView text = (TextView) dialog.findViewById(R.id.dialogTextView);
-        text.setText("Текст в диалоговом окне. Вы любите котов?");*/
+        dialog.setTitle("Instruction")
+        dialog.setContentView(R.layout.dialog)
 
         join.setOnClickListener {
             Log.d("main", "Intent to search!")
