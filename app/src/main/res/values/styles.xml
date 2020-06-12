@@ -13,4 +13,34 @@
         <item name="windowActionBar">false</item>
     </style>
 
+    <style name="MainBackground">
+        <item name="android:background">@drawable/wood</item>
+    </style>
+
+    <style name="RoundedCustomButton" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:background">@drawable/custom_btn</item>
+        <item name="android:colorButtonNormal">#1a237e</item>
+        <item name="android:colorControlHighlight">#673ab7</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="Background">
+        <item name="android:background">#FF1836</item>
+    </style>
+
+    <style name="Counter">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/neon_green</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowColor">#050505</item>
+        <item name="android:shadowRadius">2</item>
+        <item name="android:text">0</item>
+    </style>
+
+    <style name="EditText">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/br_white</item>
+    </style>
 </resources>

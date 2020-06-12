@@ -4,7 +4,9 @@
     package="com.makentoshe.androidgithubcitemplate">
 
     <application
+        android:hardwareAccelerated="false"
         android:allowBackup="true"
+        android:largeHeap="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -21,14 +23,17 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Searching"
+        <activity android:name=".Custom"
             android:label="searching"
-            tools:ignore="WrongManifestParent">
+
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity">
         </activity>
 
         <activity android:name=".Game"
             android:label="game"
-            tools:ignore="WrongManifestParent">
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity">
         </activity>
     </application>
 </manifest>

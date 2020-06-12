@@ -3,11 +3,11 @@
     <item>
         <shape android:shape="oval">
             <solid android:color="#FCD366"/>
-            <stroke android:width="25dp" android:color="#000000" />
+            <stroke android:width="25dp" android:color="#0000FF" />
         </shape>
     </item>
     <item
-        android:drawable="@drawable/wood_table"
+        android:drawable="@drawable/megumin"
         android:top="3dp"
         android:bottom="3dp"
         android:left="3dp"

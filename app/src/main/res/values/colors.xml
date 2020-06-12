@@ -3,4 +3,10 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="cappuccino">#E3AA71</color>
+    <color name="neon_green">#39FF14</color>
+    <color name="white">#FFFFFF</color>
+    <color name="br_white">#FFE0C9</color>
+    <color name="blue_black">#00035F</color>
+    <color name="red_black">#5A0000</color>
 </resources>

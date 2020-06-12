@@ -12,9 +12,11 @@
         android:id="@+id/history_head"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:textColor="#fff"
         android:text="История"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:gravity="center"
+        android:background="@drawable/wood"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="RtlSymmetry"
@@ -37,28 +39,39 @@
         app:layout_constraintStart_toEndOf="@+id/history_head"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="@dimen/right_width"
+        android:background="@drawable/wood"
         tools:context=".MainActivity">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/icon"
+            android:src="@drawable/sun"
+            android:background="@color/br_white"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_weight="0.1"
-            android:gravity="center"
-            android:text="icon" />
+            android:gravity="center" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/state"
+            android:background="@drawable/wood"
+            android:textColor="#fff"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.8"
             android:gravity="center"
             android:text="Состояние" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/start"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
             android:layout_weight="0.1"
             android:gravity="center"
-            android:text="03:00" />
+            android:paddingStart="1dp"
+            android:text="Start"
+            android:textColor="@color/br_white"
+            android:background="@color/red_black"
+            android:textSize="12sp"/>
     </LinearLayout>
 
     <View
@@ -73,6 +86,7 @@
         android:layout_height="0dp"
         android:layout_weight="0.2"
         android:orientation="vertical"
+        android:background="@drawable/paper_2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:context=".MainActivity"
@@ -80,23 +94,25 @@
         app:layout_constraintHeight_percent="@dimen/bottom_height">
 
         <TextView
+            android:layout_marginStart="5dp"
+            android:textColor="#fff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/history"
-            android:scrollbars="vertical"
-            />
+            android:scrollbars="vertical" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_weight="0.7"
+        android:background="@drawable/pub"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:context=".MainActivity"
+        app:layout_constraintHeight_percent="@dimen/bottom_height"
         app:layout_constraintWidth_percent="@dimen/right_width"
-        app:layout_constraintHeight_percent="@dimen/bottom_height">>
+        tools:context=".MainActivity">>
 
 
         <View
@@ -111,63 +127,88 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/button0"
+            android:tag="0"
+            style="@style/Counter"
             android:layout_width="@dimen/btn_size"
             android:layout_height="@dimen/btn_size"
-            android:background="@drawable/circle_button"
+            android:background="@drawable/circle_button_active0"
             app:layout_constraintCircle="@id/table"
             app:layout_constraintCircleRadius="@dimen/radius"
             tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/button1"
+            android:tag="1"
+            style="@style/Counter"
             android:layout_width="@dimen/btn_size"
             android:layout_height="@dimen/btn_size"
-            android:background="@drawable/circle_button"
+            android:background="@drawable/circle_button1"
             app:layout_constraintCircle="@id/table"
             app:layout_constraintCircleAngle="60"
             app:layout_constraintCircleRadius="@dimen/radius"
             tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/button2"
+            android:tag="2"
             android:layout_width="@dimen/btn_size"
             android:layout_height="@dimen/btn_size"
-            android:background="@drawable/circle_button"
+            style="@style/Counter"
+            android:background="@drawable/circle_button2"
             app:layout_constraintCircle="@id/table"
             app:layout_constraintCircleAngle="120"
             app:layout_constraintCircleRadius="@dimen/radius"
             tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/button3"
+            android:tag="3"
             android:layout_width="@dimen/btn_size"
             android:layout_height="@dimen/btn_size"
-            android:background="@drawable/circle_button"
+            style="@style/Counter"
+            android:background="@drawable/circle_button3"
             app:layout_constraintCircle="@id/table"
             app:layout_constraintCircleAngle="180"
             app:layout_constraintCircleRadius="@dimen/radius"
             tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/button4"
+            android:tag="4"
             android:layout_width="@dimen/btn_size"
             android:layout_height="@dimen/btn_size"
-            android:background="@drawable/circle_button"
+            android:background="@drawable/circle_button4"
             app:layout_constraintCircle="@id/table"
+            style="@style/Counter"
             app:layout_constraintCircleAngle="240"
             app:layout_constraintCircleRadius="@dimen/radius"
             tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/button5"
+            android:tag="5"
+            style="@style/Counter"
             android:layout_width="@dimen/btn_size"
             android:layout_height="@dimen/btn_size"
-            android:background="@drawable/circle_button"
+            android:background="@drawable/circle_button5"
             app:layout_constraintCircle="@id/table"
             app:layout_constraintCircleAngle="300"
             app:layout_constraintCircleRadius="@dimen/radius"
             tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/exit"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:visibility="invisible"
+            android:background="@drawable/exit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
