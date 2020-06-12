@@ -24,6 +24,13 @@
         <item name="android:textColor">#fff</item>
     </style>
 
+    <style name="CustomDropDownList" parent="@style/Widget.AppCompat.Spinner.DropDown">
+        <item name="android:background">@drawable/custom_btn</item>
+        <item name="android:colorButtonNormal">#1a237e</item>
+        <item name="android:colorControlHighlight">#673ab7</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
     <style name="Background">
         <item name="android:background">#FF1836</item>
     </style>
