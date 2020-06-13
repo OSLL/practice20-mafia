@@ -15,8 +15,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private var spinner: Spinner? = null
     private var arrayAdapter: ArrayAdapter<String>? = null
-    private var itemList = arrayOf("4", "5", "6", "7", "8", "9", "10");
-    private var counterChoose: Int = 4
+    private var itemList = arrayOf("4", "5", "6", "7", "8");
+    private var counterChoose = "4"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +30,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         join.setOnClickListener {
             Log.d("main", "Intent to search!")
             var myIntent = Intent(this, Custom::class.java)
+
+            myIntent.putExtra("cnt", counterChoose)
+
             finish()
             startActivity(myIntent)
         }
@@ -55,6 +58,6 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         var items: String = parent?.getItemAtPosition(position) as String
-        counterChoose = items.toInt()
+        counterChoose = items
     }
 }
