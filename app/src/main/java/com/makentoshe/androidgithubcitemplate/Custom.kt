@@ -24,6 +24,12 @@ class Custom : AppCompatActivity() {
         for (i in 0 until playerCounter.toInt())
             arrayEdit[i].visibility = View.VISIBLE
 
+        backBtn.setOnClickListener{
+            val myIntent = Intent(this, MainActivity::class.java)
+            finish()
+            startActivity(myIntent)
+        }
+
         nextBtn.setOnClickListener {
             val myIntent = Intent(this, Game::class.java)
 
