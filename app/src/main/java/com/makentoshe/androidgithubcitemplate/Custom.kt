@@ -33,12 +33,9 @@ class Custom : AppCompatActivity() {
         nextBtn.setOnClickListener {
             val myIntent = Intent(this, Game::class.java)
 
-            myIntent.putExtra("0", editText0.text.toString())
-            myIntent.putExtra("1", editText1.text.toString())
-            myIntent.putExtra("2", editText2.text.toString())
-            myIntent.putExtra("3", editText3.text.toString())
-            myIntent.putExtra("4", editText4.text.toString())
-            myIntent.putExtra("5", editText5.text.toString())
+            myIntent.putExtra("cnt", playerCounter)
+            for (i in 0 until playerCounter.toInt())
+                myIntent.putExtra("$i", arrayEdit[i].text.toString())
 
             finish()
             startActivity(myIntent)

@@ -19,8 +19,8 @@ import com.makentoshe.androidgithubcitemplate.mechanic.Main
 @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class Game : AppCompatActivity() {
     lateinit var arrayBtn: Array<Button>
-    private val arrayPm = ArrayList<PopupMenu>(6)
-    private var nameArray = Array<String>(6){""}
+    private val arrayPm = ArrayList<PopupMenu>(8)
+    private var nameArray = Array<String>(8){""}
     lateinit var main: Main
     var isClicked = false
 
@@ -30,17 +30,18 @@ class Game : AppCompatActivity() {
         Log.d("game", "Game is here")
 
         history.movementMethod = ScrollingMovementMethod()
-        arrayBtn = arrayOf(button0, button1, button2, button3, button4, button5)
+        arrayBtn = arrayOf(button0, button1, button2, button3, button4, button5, button6, button7)
 
         for (btn in arrayBtn)
             createPopup(btn, arrayPm)
 
-        nameArray[0] = intent.getStringExtra("0").toString()
-        nameArray[1] = intent.getStringExtra("1").toString()
-        nameArray[2] = intent.getStringExtra("2").toString()
-        nameArray[3] = intent.getStringExtra("3").toString()
-        nameArray[4] = intent.getStringExtra("4").toString()
-        nameArray[5] = intent.getStringExtra("5").toString()
+        val playerCounter = intent.getStringExtra("cnt").toString().toInt()
+
+        for (i in 0 until playerCounter)
+            nameArray[i] = intent.getStringExtra("$i").toString()
+        for (i in 0 until playerCounter)
+            arrayBtn[i].visibility = View.VISIBLE
+
 
         start.setOnClickListener {
             if (!isClicked) {
@@ -57,8 +58,7 @@ class Game : AppCompatActivity() {
             startActivity(myIntent)
         }
 
-        arrayBtn = arrayOf(button0, button1, button2, button3, button4, button5)
-        main = Main(history, arrayBtn, arrayPm, this.icon, this.state, this.exit, this.start, nameArray)
+        main = Main(history, arrayBtn, arrayPm, this.icon, this.state, this.exit, this.start, nameArray, playerCounter)
     }
 
     private fun createPopup(btn: Button, arrPm: ArrayList<PopupMenu>) {

@@ -7,9 +7,13 @@ import com.makentoshe.androidgithubcitemplate.R
 
 class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<PopupMenu>,
             private val icon: ImageView, private val state: TextView,
-            private val exit: Button, private val start: Button) {
-    var skinUsual = arrayOf(R.drawable.circle_button0, R.drawable.circle_button1, R.drawable.circle_button2, R.drawable.circle_button3, R.drawable.circle_button4, R.drawable.circle_button5)
-    var skinActive = arrayOf(R.drawable.circle_button_active0, R.drawable.circle_button_active1, R.drawable.circle_button_active2, R.drawable.circle_button_active3, R.drawable.circle_button_active4, R.drawable.circle_button_active5)
+            private val exit: Button, private val start: Button,
+            private val playerCounter: Int) {
+    private var skinUsual = arrayOf(R.drawable.circle_button0, R.drawable.circle_button1, R.drawable.circle_button2, R.drawable.circle_button3,
+        R.drawable.circle_button4, R.drawable.circle_button5, R.drawable.circle_button6, R.drawable.circle_button7)
+
+    private var skinActive = arrayOf(R.drawable.circle_button_active0, R.drawable.circle_button_active1, R.drawable.circle_button_active2, R.drawable.circle_button_active3,
+        R.drawable.circle_button_active4, R.drawable.circle_button_active5, R.drawable.circle_button_active6, R.drawable.circle_button_active7)
 
     fun setBtnActive(id : Int, prevId: Int)
     {

@@ -1,21 +1,24 @@
 package com.makentoshe.androidgithubcitemplate.mechanic
 
-class PlayersManager(var views: Views, var hist: History, nameArray: Array<String>) {
+class PlayersManager(var views: Views, var hist: History, nameArray: Array<String>, var playerCounter: Int) {
     private var playersList: Array<Player>
-    private var alives = arrayListOf<Int>(0, 1, 2, 3, 4, 5)
+    private var alives = arrayListOf<Int>()
     private var curAlive = 0
     private var mafiaChoose = (-1).toInt()
     private var doctorChoose = (-1).toInt()
-    private var votingResults = Array<Int>(6) {0}
+    private var votingResults = Array<Int>(playerCounter) {0}
     private var lastId = -1
 
     init {
-        val mafiaChoose = (0..5).random()
-        var doctorChoose = (0..5).random()
+        val mafiaChoose = (0 until playerCounter).random()
+        var doctorChoose = (0 until playerCounter).random()
         while (doctorChoose == mafiaChoose)
-            doctorChoose = (0..5).random()
+            doctorChoose = (0 until playerCounter).random()
 
-        playersList = Array<Player>(6) { i ->
+        for (i in 0 until playerCounter)
+            alives.add(i)
+
+        playersList = Array<Player>(playerCounter) { i ->
             Player(
                 when (i) {
                     mafiaChoose -> Mafia()
@@ -107,7 +110,7 @@ class PlayersManager(var views: Views, var hist: History, nameArray: Array<Strin
 
     fun getVotingResults(): Array<Int> {
         val resCopy = votingResults
-        votingResults = arrayOf(0, 0, 0, 0, 0, 0)
+        votingResults = Array<Int>(playerCounter){0}
         return resCopy
     }
 
