@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.DialogFragment
 import kotlinx.android.synthetic.main.game.*
 
@@ -36,11 +37,16 @@ class Game : AppCompatActivity() {
             createPopup(btn, arrayPm)
 
         val playerCounter = intent.getStringExtra("cnt").toString().toInt()
+        val angle = 360 / playerCounter
+        var param: ConstraintLayout.LayoutParams
 
-        for (i in 0 until playerCounter)
+        for (i in 0 until playerCounter) {
             nameArray[i] = intent.getStringExtra("$i").toString()
-        for (i in 0 until playerCounter)
             arrayBtn[i].visibility = View.VISIBLE
+            param = arrayBtn[i].layoutParams as ConstraintLayout.LayoutParams
+            param.circleAngle = i * angle.toFloat()
+            arrayBtn[i].layoutParams = param
+        }
 
 
         start.setOnClickListener {

@@ -109,7 +109,7 @@
         style="@style/EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Player 7"
+        android:text="@string/player_7"
         android:background="@color/bloody_red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,7 +125,7 @@
         style="@style/EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Player 8"
+        android:text="@string/player_8"
         android:background="@color/bloody_red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -150,7 +150,7 @@
             style="@style/RoundedCustomButton"
             android:layout_width="85dp"
             android:layout_height="50dp"
-            android:text="Back"
+            android:text="@string/back"
             tools:ignore="MissingConstraints" />
 
         <Button

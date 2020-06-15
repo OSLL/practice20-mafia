@@ -19,4 +19,10 @@
     <string name="instructionText">Эта игра полностью повторяет мафию, давая вам возможность избавиться от ведущего. Все игроки
         делают одинаковое количество ходов, включая горожан. Ночью обычные игроки делают нейтральный ход для беспалевности роли.
         Доктор может лечить себя только один раз за игру</string>
+    <string name="history">История</string>
+    <string name="state_icon">State icon</string>
+    <string name="state">Состояние</string>
+    <string name="player_7">Player 7</string>
+    <string name="player_8">Player 8</string>
+    <string name="back">Back</string>
 </resources>
