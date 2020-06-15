@@ -5,7 +5,7 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import java.lang.Integer.max
 
-class StateManager(private val pm: PlayersManager, private var hist: History) {
+class StateManager(private val pm: PlayersManager, private val hist: History) {
     private var state: State = StateDay()
 
     fun changePhase() {
