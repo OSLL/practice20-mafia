@@ -7,7 +7,7 @@
         </shape>
     </item>
     <item
-        android:drawable="@drawable/shion"
+        android:drawable="@drawable/cmpbl_cir"
         android:top="3dp"
         android:bottom="3dp"
         android:left="3dp"
