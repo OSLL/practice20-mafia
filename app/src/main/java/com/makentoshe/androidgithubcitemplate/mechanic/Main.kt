@@ -7,9 +7,10 @@ class Main(var hist: TextView, private val arrayBtn: Array<Button>,
            private val arrayPm: ArrayList<PopupMenu>,
            private val icon: ImageView, private val state: TextView,
            private val exit: Button, private val start: Button,
-           private val nameArray: Array<String>, private val playerCounter: Int) {
+           private val nameArray: Array<String>, private val playerCounter: Int,
+           private val scrollView: ScrollView) {
     private val views = Views(arrayBtn, arrayPm, icon, state, exit, start, playerCounter)
-    private val history = History(hist)
+    private val history = History(hist, scrollView)
     private val pm = PlayersManager(views, history, nameArray, playerCounter)
     private val sm = StateManager(pm, history)
 

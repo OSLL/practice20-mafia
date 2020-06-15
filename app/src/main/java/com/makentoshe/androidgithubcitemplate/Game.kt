@@ -64,7 +64,7 @@ class Game : AppCompatActivity() {
             startActivity(myIntent)
         }
 
-        main = Main(history, arrayBtn, arrayPm, this.icon, this.state, this.exit, this.start, nameArray, playerCounter)
+        main = Main(history, arrayBtn, arrayPm, this.icon, this.state, this.exit, this.start, nameArray, playerCounter, scroll)
     }
 
     private fun createPopup(btn: Button, arrPm: ArrayList<PopupMenu>) {
