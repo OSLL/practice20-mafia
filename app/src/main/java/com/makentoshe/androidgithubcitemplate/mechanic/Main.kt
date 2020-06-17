@@ -34,11 +34,11 @@ class Main(var hist: TextView, private val arrayBtn: Array<Button>,
 
             endChecker = pm.isEnd()
             if (endChecker == 1) {
-                history.write("Mafia wins")
+                views.changeStateText("Mafia wins")
                 views.showExit()
                 views.blockPopups()
             } else if (endChecker == 2) {
-                history.write("Citizen wins")
+                views.changeStateText("Citizen wins")
                 views.showExit()
                 views.blockPopups()
             }

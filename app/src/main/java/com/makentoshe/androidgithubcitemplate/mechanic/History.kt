@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.makentoshe.androidgithubcitemplate.R
 import kotlinx.android.synthetic.main.game.*
+import kotlin.concurrent.thread
 
 class History(private var tv: TextView, private val scrollView: ScrollView) {
     fun write(text: String) {
