@@ -15,8 +15,14 @@
     <string name="enter_nicknames_for_players">Enter nicknames for players</string>
     <string name="mafia">Mafia</string>
     <string name="instruction">Instruction</string>
-    <string name="dialogTitle">Инструкция</string>
-    <string name="instructionText">Эта игра полностью повторяет мафию, давая вам возможность избавиться от ведущего. Все игроки
-        делают одинаковое количество ходов, включая горожан. Ночью обычные игроки делают нейтральный ход для беспалевности роли.
-        Доктор может лечить себя только один раз за игру</string>
+    <string name="dialogTitle">Instruction</string>
+    <string name="instructionText">This game completely repeats the mafia, giving you the opportunity to get rid of the leader.\n
+        All players make the same number of moves, including the townspeople. At night, ordinary players make a neutral move to hide the role.
+        A doctor can only heal himself once per game</string>
+    <string name="history">History</string>
+    <string name="state_icon">State icon</string>
+    <string name="state">State</string>
+    <string name="player_7">Player 7</string>
+    <string name="player_8">Player 8</string>
+    <string name="back">Back</string>
 </resources>

@@ -8,100 +8,160 @@
     tools:context=".MainActivity">
 
     <EditText
+        android:visibility="invisible"
         android:id="@+id/editText0"
+        style="@style/EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/player_1"
-        style="@style/EditText"
+        android:background="@color/bloody_red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.271"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.322"
+        app:layout_constraintVertical_bias="0.27"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:visibility="invisible"
+        android:id="@+id/editText1"
+        style="@style/EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/player_5"
-        style="@style/EditText"
+        android:text="@string/player_2"
+        android:background="@color/bloody_red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.658"
+        app:layout_constraintHorizontal_bias="0.271"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.42"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/player_4"
-        style="@style/EditText"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.658"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.322"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/player_6"
-        style="@style/EditText"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.658"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.683"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
+        android:visibility="invisible"
         android:id="@+id/editText2"
+        style="@style/EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/player_3"
-        style="@style/EditText"
+        android:background="@color/bloody_red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.271"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.668"
+        app:layout_constraintVertical_bias="0.548"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:visibility="invisible"
+        android:id="@+id/editText3"
+        style="@style/EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/player_2"
-        style="@style/EditText"
+        android:text="@string/player_4"
+        android:background="@color/bloody_red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.271"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.715"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/nextBtn"
-        style="@style/RoundedCustomButton"
-        android:layout_width="94dp"
-        android:layout_height="55dp"
-        android:text="@string/next"
+    <EditText
+        android:visibility="invisible"
+        android:id="@+id/editText4"
+        style="@style/EditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/player_5"
+        android:background="@color/bloody_red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.658"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.27"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:visibility="invisible"
+        android:id="@+id/editText5"
+        style="@style/EditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/player_6"
+        android:background="@color/bloody_red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.658"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.42"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:visibility="invisible"
+        android:id="@+id/editText6"
+        style="@style/EditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/player_7"
+        android:background="@color/bloody_red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.657"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.568"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:visibility="invisible"
+        android:id="@+id/editText7"
+        style="@style/EditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/player_8"
+        android:background="@color/bloody_red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.658"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.715"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.943"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.955"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.955">
+
+        <Button
+            android:id="@+id/backBtn"
+            style="@style/RoundedCustomButton"
+            android:layout_width="85dp"
+            android:layout_height="50dp"
+            android:text="@string/back"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/nextBtn"
+            style="@style/RoundedCustomButton"
+            android:layout_width="85dp"
+            android:layout_height="50dp"
+            android:text="@string/next"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView"
@@ -115,6 +175,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.043" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

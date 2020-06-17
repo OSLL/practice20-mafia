@@ -7,10 +7,11 @@ class Main(var hist: TextView, private val arrayBtn: Array<Button>,
            private val arrayPm: ArrayList<PopupMenu>,
            private val icon: ImageView, private val state: TextView,
            private val exit: Button, private val start: Button,
-           private val nameArray: Array<String>) {
-    private val views = Views(arrayBtn, arrayPm, icon, state, exit, start)
-    private val history = History(hist)
-    private val pm = PlayersManager(views, history, nameArray)
+           private val nameArray: Array<String>, private val playerCounter: Int,
+           private val scrollView: ScrollView) {
+    private val views = Views(arrayBtn, arrayPm, icon, state, exit, start, playerCounter)
+    private val history = History(hist, scrollView)
+    private val pm = PlayersManager(views, history, nameArray, playerCounter)
     private val sm = StateManager(pm, history)
 
     fun playerChoose(id: Int) {
@@ -33,11 +34,11 @@ class Main(var hist: TextView, private val arrayBtn: Array<Button>,
 
             endChecker = pm.isEnd()
             if (endChecker == 1) {
-                history.write("Mafia wins")
+                views.changeStateText("Mafia wins")
                 views.showExit()
                 views.blockPopups()
             } else if (endChecker == 2) {
-                history.write("Citizen wins")
+                views.changeStateText("Citizen wins")
                 views.showExit()
                 views.blockPopups()
             }
