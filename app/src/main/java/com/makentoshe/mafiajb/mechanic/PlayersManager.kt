@@ -1,12 +1,12 @@
 package com.makentoshe.mafiajb.mechanic
 
-class PlayersManager(var views: Views, var hist: History, nameArray: Array<String>, var playerCounter: Int) {
+class PlayersManager(private var views: Views, private var hist: History, nameArray: Array<String>, private var playerCounter: Int) {
     private var playersList: Array<Player>
     private var alives = arrayListOf<Int>()
     private var curAlive = 0
-    private var mafiaChoose = (-1).toInt()
-    private var doctorChoose = (-1).toInt()
-    private var votingResults = Array<Int>(playerCounter) {0}
+    private var mafiaChoose = (-1)
+    private var doctorChoose = (-1)
+    private var votingResults = Array(playerCounter) {0}
     private var lastId = -1
 
     init {
@@ -18,7 +18,7 @@ class PlayersManager(var views: Views, var hist: History, nameArray: Array<Strin
         for (i in 0 until playerCounter)
             alives.add(i)
 
-        playersList = Array<Player>(playerCounter) { i ->
+        playersList = Array(playerCounter) { i ->
             Player(
                 when (i) {
                     mafiaChoose -> Mafia()
@@ -32,7 +32,7 @@ class PlayersManager(var views: Views, var hist: History, nameArray: Array<Strin
 
     fun startStep(phase: String): Boolean {
         curAlive = (curAlive + 1) % alives.size
-        var player = playersList[alives[curAlive]]
+        val player = playersList[alives[curAlive]]
 
         if (curAlive == 0) {
             lastId = alives[alives.size - 1]
@@ -96,10 +96,6 @@ class PlayersManager(var views: Views, var hist: History, nameArray: Array<Strin
         alives.remove(id)
     }
 
-    fun getAlives(): ArrayList<Int> {
-        return alives
-    }
-
     fun getNightEvents(): Array<Int> {
         val res = arrayOf(mafiaChoose, doctorChoose)
         mafiaChoose = -1
@@ -110,7 +106,7 @@ class PlayersManager(var views: Views, var hist: History, nameArray: Array<Strin
 
     fun getVotingResults(): Array<Int> {
         val resCopy = votingResults
-        votingResults = Array<Int>(playerCounter){0}
+        votingResults = Array(playerCounter){0}
         return resCopy
     }
 

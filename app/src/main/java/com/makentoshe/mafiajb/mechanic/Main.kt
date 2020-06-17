@@ -2,20 +2,19 @@ package com.makentoshe.mafiajb.mechanic
 
 import android.widget.*
 
-class Main(var hist: TextView, private val arrayBtn: Array<Button>,
-           private val arrayPm: ArrayList<PopupMenu>,
-           private val icon: ImageView, private val state: TextView,
-           private val exit: Button, private val start: Button,
-           private val nameArray: Array<String>, private val playerCounter: Int,
-           private val scrollView: ScrollView) {
+class Main(hist: TextView, arrayBtn: Array<Button>,
+           arrayPm: ArrayList<PopupMenu>,
+           icon: ImageView, state: TextView,
+           exit: Button, start: Button,
+           nameArray: Array<String>, playerCounter: Int,
+           scrollView: ScrollView) {
     private val views = Views(
         arrayBtn,
         arrayPm,
         icon,
         state,
         exit,
-        start,
-        playerCounter
+        start
     )
     private val history =
         History(hist, scrollView)
@@ -38,7 +37,7 @@ class Main(var hist: TextView, private val arrayBtn: Array<Button>,
 
     fun startStep() {
         val res = if (sm.getState() == "Day") pm.startStep("Day") else pm.startStep("Night")
-        var endChecker: Int
+        val endChecker: Int
 
         if (!res) {
             sm.process()

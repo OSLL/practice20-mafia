@@ -13,7 +13,7 @@ interface Roles {
     fun choose(alives : ArrayList<Int>, myId : Int) : Int
 }
 
-class Citizen() : Roles {
+class Citizen : Roles {
     override val text: String
         get() = "Choose smb to wish good night"
     override val role: String
@@ -24,12 +24,12 @@ class Citizen() : Roles {
     }
 }
 
-class Doctor() : Roles {
+class Doctor : Roles {
     override val text: String
         get() = "Choose smb to heal"
     override val role: String
         get() = "Doctor"
-    var selfHealCnt = 0
+    private var selfHealCnt = 0
 
     override fun isSelfChoose(): Boolean {
         if (selfHealCnt == 0) {
@@ -47,7 +47,7 @@ class Doctor() : Roles {
     }
 }
 
-class Mafia() : Roles {
+class Mafia : Roles {
     override val text: String
         get() = "Choose smb to kill"
     override val role: String

@@ -24,7 +24,7 @@ abstract class State {
     abstract fun process(pm: PlayersManager, hist: History)
 }
 
-class StateDay() : State() {
+class StateDay : State() {
     override val text: String
         get() = "Day"
 
@@ -64,7 +64,7 @@ class StateDay() : State() {
     }
 }
 
-class StateNight(): State() {
+class StateNight : State() {
     override val text: String
         get() = "Night"
 

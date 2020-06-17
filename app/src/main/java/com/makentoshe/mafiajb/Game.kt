@@ -16,11 +16,11 @@ import com.makentoshe.mafiajb.mechanic.Main
 
 @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class Game : AppCompatActivity() {
-    lateinit var arrayBtn: Array<Button>
+    private lateinit var arrayBtn: Array<Button>
     private val arrayPm = ArrayList<PopupMenu>(8)
-    private var nameArray = Array<String>(8){""}
-    lateinit var main: Main
-    var isClicked = false
+    private var nameArray = Array(8){""}
+    private lateinit var main: Main
+    private var isClicked = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,12 +51,12 @@ class Game : AppCompatActivity() {
                 Toast.makeText(this, "Choose smb!", Toast.LENGTH_SHORT).show()
             } else {
                 main.startStep()
-                isClicked = false;
+                isClicked = false
             }
         }
 
         exit.setOnClickListener {
-            var myIntent = Intent(this, MainActivity::class.java)
+            val myIntent = Intent(this, MainActivity::class.java)
             finish()
             startActivity(myIntent)
         }

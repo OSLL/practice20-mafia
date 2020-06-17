@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.custom.*
 
 @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class Custom : AppCompatActivity() {
-    lateinit var arrayEdit: Array<EditText>
+    private lateinit var arrayEdit: Array<EditText>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -7,8 +7,7 @@ import com.makentoshe.mafiajb.R
 
 class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<PopupMenu>,
             private val icon: ImageView, private val state: TextView,
-            private val exit: Button, private val start: Button,
-            private val playerCounter: Int) {
+            private val exit: Button, private val start: Button) {
     private var skinUsual = arrayOf(R.drawable.circle_button0, R.drawable.circle_button1, R.drawable.circle_button2, R.drawable.circle_button3,
         R.drawable.circle_button4, R.drawable.circle_button5, R.drawable.circle_button6, R.drawable.circle_button7)
 
