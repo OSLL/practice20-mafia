@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
         val dialog = Dialog(this);
 
-        dialog.setTitle("Instruction")
         dialog.setContentView(R.layout.dialog)
 
         join.setOnClickListener {
