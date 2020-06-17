@@ -1,6 +1,5 @@
-package com.makentoshe.androidgithubcitemplate.mechanic
+package com.makentoshe.mafiajb.mechanic
 
-import android.view.View
 import android.widget.*
 
 class Main(var hist: TextView, private val arrayBtn: Array<Button>,
@@ -9,9 +8,23 @@ class Main(var hist: TextView, private val arrayBtn: Array<Button>,
            private val exit: Button, private val start: Button,
            private val nameArray: Array<String>, private val playerCounter: Int,
            private val scrollView: ScrollView) {
-    private val views = Views(arrayBtn, arrayPm, icon, state, exit, start, playerCounter)
-    private val history = History(hist, scrollView)
-    private val pm = PlayersManager(views, history, nameArray, playerCounter)
+    private val views = Views(
+        arrayBtn,
+        arrayPm,
+        icon,
+        state,
+        exit,
+        start,
+        playerCounter
+    )
+    private val history =
+        History(hist, scrollView)
+    private val pm = PlayersManager(
+        views,
+        history,
+        nameArray,
+        playerCounter
+    )
     private val sm = StateManager(pm, history)
 
     fun playerChoose(id: Int) {

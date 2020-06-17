@@ -1,4 +1,4 @@
-package com.makentoshe.androidgithubcitemplate.mechanic
+package com.makentoshe.mafiajb.mechanic
 
 class PlayersManager(var views: Views, var hist: History, nameArray: Array<String>, var playerCounter: Int) {
     private var playersList: Array<Player>

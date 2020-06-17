@@ -1,4 +1,4 @@
-package com.makentoshe.androidgithubcitemplate.mechanic
+package com.makentoshe.mafiajb.mechanic
 
 interface Roles {
     val text : String

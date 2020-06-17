@@ -1,9 +1,9 @@
-package com.makentoshe.androidgithubcitemplate.mechanic
+package com.makentoshe.mafiajb.mechanic
 
 import android.view.View
 import android.annotation.SuppressLint
 import android.widget.*
-import com.makentoshe.androidgithubcitemplate.R
+import com.makentoshe.mafiajb.R
 
 class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<PopupMenu>,
             private val icon: ImageView, private val state: TextView,
@@ -29,15 +29,6 @@ class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<
     fun blockPopups() {
         for (btn in arrayBtn)
             btn.setOnClickListener(null)
-    }
-
-
-    fun setPopupInactive() {
-
-    }
-
-    fun allPopups() {
-
     }
 
     fun restorePopup(id: Int) {

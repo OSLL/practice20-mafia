@@ -1,12 +1,8 @@
-package com.makentoshe.androidgithubcitemplate.mechanic
-
-import android.os.Build
-import android.widget.TextView
-import androidx.annotation.RequiresApi
-import java.lang.Integer.max
+package com.makentoshe.mafiajb.mechanic
 
 class StateManager(private val pm: PlayersManager, private val hist: History) {
-    private var state: State = StateDay()
+    private var state: State =
+        StateDay()
 
     fun changePhase() {
         if (this.getState() == "Day") {

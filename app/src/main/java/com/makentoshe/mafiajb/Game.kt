@@ -1,6 +1,5 @@
-package com.makentoshe.androidgithubcitemplate
+package com.makentoshe.mafiajb
 
-import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,12 +9,10 @@ import android.view.View
 import android.widget.Button
 import android.widget.PopupMenu
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.fragment.app.DialogFragment
 import kotlinx.android.synthetic.main.game.*
 
-import com.makentoshe.androidgithubcitemplate.mechanic.Main
+import com.makentoshe.mafiajb.mechanic.Main
 
 @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class Game : AppCompatActivity() {
@@ -64,7 +61,18 @@ class Game : AppCompatActivity() {
             startActivity(myIntent)
         }
 
-        main = Main(history, arrayBtn, arrayPm, this.icon, this.state, this.exit, this.start, nameArray, playerCounter, scroll)
+        main = Main(
+            history,
+            arrayBtn,
+            arrayPm,
+            this.icon,
+            this.state,
+            this.exit,
+            this.start,
+            nameArray,
+            playerCounter,
+            scroll
+        )
     }
 
     private fun createPopup(btn: Button, arrPm: ArrayList<PopupMenu>) {

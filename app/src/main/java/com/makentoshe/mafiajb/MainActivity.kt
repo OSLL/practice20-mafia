@@ -1,4 +1,4 @@
-package com.makentoshe.androidgithubcitemplate
+package com.makentoshe.mafiajb
 
 import android.app.Dialog
 import android.content.Intent
