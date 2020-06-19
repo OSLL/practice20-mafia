@@ -1,9 +1,9 @@
-package com.makentoshe.mafiajb.mechanic
+package com.ida.mafiajb.mechanic
 
 import android.view.View
 import android.annotation.SuppressLint
 import android.widget.*
-import com.makentoshe.mafiajb.R
+import com.ida.mafiajb.R
 
 class Views(private val arrayBtn: Array<Button>, private val arrayPm: ArrayList<PopupMenu>,
             private val icon: ImageView, private val state: TextView,

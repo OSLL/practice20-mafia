@@ -1,4 +1,4 @@
-package com.makentoshe.mafiajb.mechanic
+package com.ida.mafiajb.mechanic
 
 interface Roles {
     val text : String

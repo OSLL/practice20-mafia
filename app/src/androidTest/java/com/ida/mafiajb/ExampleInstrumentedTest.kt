@@ -1,4 +1,4 @@
-package com.makentoshe.mafiajb
+package com.ida.mafiajb
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

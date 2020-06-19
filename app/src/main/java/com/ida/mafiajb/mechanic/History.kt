@@ -1,4 +1,4 @@
-package com.makentoshe.mafiajb.mechanic
+package com.ida.mafiajb.mechanic
 
 import android.view.View
 import android.widget.ScrollView

@@ -1,4 +1,4 @@
-package com.makentoshe.mafiajb
+package com.ida.mafiajb
 
 import android.app.Dialog
 import android.content.Intent

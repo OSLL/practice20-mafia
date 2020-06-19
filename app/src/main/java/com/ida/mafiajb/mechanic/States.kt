@@ -1,4 +1,4 @@
-package com.makentoshe.mafiajb.mechanic
+package com.ida.mafiajb.mechanic
 
 class StateManager(private val pm: PlayersManager, private val hist: History) {
     private var state: State =

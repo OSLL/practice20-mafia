@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.makentoshe.mafiajb">
+    package="com.ida.mafiajb">
 
     <application
         android:hardwareAccelerated="false"
@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/HiddenTitleTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.ida.mafiajb.MainActivity"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
@@ -23,14 +23,14 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Custom"
+        <activity android:name="com.ida.mafiajb.Custom"
             android:label="searching"
 
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity">
         </activity>
 
-        <activity android:name=".Game"
+        <activity android:name="com.ida.mafiajb.Game"
             android:label="game"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity">

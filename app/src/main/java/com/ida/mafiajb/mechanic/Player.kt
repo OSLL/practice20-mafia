@@ -1,4 +1,4 @@
-package com.makentoshe.mafiajb.mechanic
+package com.ida.mafiajb.mechanic
 
 class Player(val role: Roles, private val id: Int, val views: Views, private val name: String) {
     fun nightAction(prevId: Int) = views.setBtnActive(id, prevId)

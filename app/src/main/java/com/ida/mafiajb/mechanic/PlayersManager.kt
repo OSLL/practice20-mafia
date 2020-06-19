@@ -1,4 +1,4 @@
-package com.makentoshe.mafiajb.mechanic
+package com.ida.mafiajb.mechanic
 
 class PlayersManager(private var views: Views, private var hist: History, nameArray: Array<String>, private var playerCounter: Int) {
     private var playersList: Array<Player>

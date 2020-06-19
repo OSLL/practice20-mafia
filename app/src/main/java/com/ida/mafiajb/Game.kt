@@ -1,4 +1,4 @@
-package com.makentoshe.mafiajb
+package com.ida.mafiajb
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +12,7 @@ import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import kotlinx.android.synthetic.main.game.*
 
-import com.makentoshe.mafiajb.mechanic.Main
+import com.ida.mafiajb.mechanic.Main
 
 @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class Game : AppCompatActivity() {
